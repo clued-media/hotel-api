@@ -13,6 +13,9 @@ hotels(app);
 var bookings = require('./js/bookings');
 bookings(app);
 
+var users = require('./js/users');
+userss(app);
+
 app.listen(port);
 
 console.log('RESTful WebServices server started on: ' + port);

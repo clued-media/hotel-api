@@ -11,3 +11,8 @@
 | bookings:id | PUT    | JSON | place a new booking        |
 | bookings:id | POST   | JSON | update a booking           |
 | bookings:id | DELETE | JSON | delete a booking           |
+| users:id    | GET    | JSON | get details of a user      |
+| users:id    | PUT    | JSON | add a new user             |
+| users:id    | POST   | JSON | update a user              |
+| users:id    | DELETE | JSON | delete a user              |
+
