@@ -2,6 +2,12 @@
 
 ## REST Interface
 
-|        URI      | GET | PUT | POST | DELETE |
-|----------------:|:---:|:---:|:----:|:------:|
-||||||
+| URI         | HTTP   | Body | Description                |
+|:------------|:------:|:----:|:---------------------------|
+| hotels      | GET    | JSON | gets a list of all hotels  |
+| hotels:id   | GET    | JSON | get details of an hotel    |
+| bookings:uid| GET    | JSON | get all bookings for a user|
+| bookings:id | GET    | JSON | get details of a booking   |
+| bookings:id | PUT    | JSON | place a new booking        |
+| bookings:id | POST   | JSON | update a booking           |
+| bookings:id | DELETE | JSON | delete a booking           |

@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
 
-	var uri = '/hotels';
+	var uri = '/bookings';
 
 	app.get(uri, function(req, res) {
 		res.send('TEST GET');

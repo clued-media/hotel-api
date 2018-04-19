@@ -6,8 +6,12 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+/* REGISTER APP TO SERVICES */
 var hotels = require('./js/hotels');
 hotels(app);
+
+var bookings = require('./js/bookings');
+bookings(app);
 
 app.listen(port);
 
