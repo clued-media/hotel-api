@@ -6,19 +6,11 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var hotels = require('./data/hotels.json');
-app.prototype.hotels = hotels;
+// Register routes.
+app.use('/users', require('./app/routes/users'));
+app.use('/hotels', require('./app/routes/hotels'));
+app.use('/bookings', require('./app/routes/bookings'));
 
-/* REGISTER APP TO SERVICES */
-var hotels = require('./js/hotels');
-hotels(app);
-
-var bookings = require('./js/bookings');
-bookings(app);
-
-var users = require('./js/users');
-users(app);
-
-app.listen(port);
-
-console.log('RESTful WebServices server started on: ' + port);
+app.listen(port, () => {
+    console.log('RESTful Web Server started on *:' + port);
+});
