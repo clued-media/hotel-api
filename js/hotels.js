@@ -5,7 +5,7 @@ module.exports = function(app) {
 	var uri = '/hotels';
 
 	app.get(uri, function(req, res) {
-		res.send('TEST GET');
+		res.send(JSON.stringify(app.prototype.hotels));
 	});
 
 	app.put(uri, function(req, res) {

@@ -6,6 +6,9 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var hotels = require('./data/hotels.json');
+app.prototype.hotels = hotels;
+
 /* REGISTER APP TO SERVICES */
 var hotels = require('./js/hotels');
 hotels(app);
@@ -14,7 +17,7 @@ var bookings = require('./js/bookings');
 bookings(app);
 
 var users = require('./js/users');
-userss(app);
+users(app);
 
 app.listen(port);
 
