@@ -1,5 +1,8 @@
 # REST API
 
+This REST API represents a *Hotel Booking API* consisting of 10 different resources, each one accessible by its corresponding name (in plural form).
+All supported HTTP calls with their meanings and JSON resource objects are listed below.
+
 ## Table of Contents
 - [Users](#users)
 - [Hotels](#hotels)
@@ -9,7 +12,7 @@
 - [Reviews](#reviews)
 - [Facilities](#facilities)
 - [Facility Categories](#facility-categories)
-- [Location](#location)
+- [Locations](#locations)
 - [Media (Photos)](#media-photos)
 
 ## Users
@@ -23,6 +26,18 @@
 | /users/:id/bookings | GET    | -     | Get all bookings of a user |
 | /users/:id/payments | GET    | -     | Get all payments of a user |
 | /users/:id/reviews  | GET    | -     | Get all reviews of a user  |
+
+```javascript
+{
+    "id": integer,
+    "username": string,
+    "email": string,
+    "name": string,
+    "bookings": [Booking, Booking,...],
+    "payments": [Payment, Payment,...],
+    "reviews": [Review, Review,...]
+}
+```
 
 ## Hotels
 | URI                    | HTTP   | Body  | Description                                      |
@@ -40,6 +55,24 @@
 | /hotels/:id/facilities | GET    | -     | Get a list of all facilities provided by a hotel |
 | /hotels/:id/media      | GET    | -     | Get a list of all media (photos) of a hotel      |
 
+```javascript
+{
+    "id": integer,
+    "name": string,
+    "description": string,
+    "location": Location,
+    "star_rating": float,
+    "user_rating": float,
+    "guests": [User, User,...],
+    "rooms": [Room, Room,...],
+    "bookings": [Booking, Booking,...],
+    "payments": [Payment, Payment,...],
+    "reviews": [Review, Review,...],
+    "facilities": [Facility, Facility,...],
+    "media": [Media, Media,...]
+}
+```
+
 ## Rooms
 | URI        | HTTP   | Body  | Description                   |
 | :--------- | :----: | :---: | :---------------------------- |
@@ -49,14 +82,39 @@
 | /rooms     | PUT    | JSON  | Update a hotel room           |
 | /rooms/:id | DELETE | -     | Delete a hotel room           |
 
+```javascript
+{
+    "id": integer,
+    "room_no": string,
+    "description": string,
+    "category": string,
+    "facilities": string,
+    "size": integer,
+    "capacity": integer,
+    "price": float
+}
+```
+
 ## Bookings
-| URI           | HTTP   | Body  | Description                |
-| :------------ | :----: | :---: | :------------------------- |
-| /bookings     | GET    | -     | Get a list of all bookings |
-| /bookings/:id | GET    | -     | Get details of a booking   |
-| /bookings     | POST   | JSON  | Add a new booking          |
-| /bookings     | PUT    | JSON  | Update a booking           |
-| /bookings/:id | DELETE | -     | Delete a booking           |
+| URI                 | HTTP   | Body  | Description                          |
+| :------------------ | :----: | :---: | :----------------------------------- |
+| /bookings           | GET    | -     | Get a list of all bookings           |
+| /bookings/:id       | GET    | -     | Get details of a booking             |
+| /bookings           | POST   | JSON  | Add a new booking                    |
+| /bookings           | PUT    | JSON  | Update a booking                     |
+| /bookings/:id       | DELETE | -     | Delete a booking                     |
+| /bookings/:id/rooms | GET    | -     | Get a list of all rooms of a booking |
+
+```javascript
+{
+    "id": integer,
+    "date": date,
+    "arrival_date": date,
+    "departure_date": date,
+    "user_id": integer,
+    "rooms": [Room, Room,...]
+}
+```
 
 ## Payments
 | URI           | HTTP   | Body  | Description                |
@@ -67,6 +125,16 @@
 | /payments     | PUT    | JSON  | Update a payment           |
 | /payments/:id | DELETE | -     | Delete a payment           |
 
+```javascript
+{
+    "id": integer,
+    "date": date,
+    "payment_method": string,
+    "amount": float,
+    "booking_id": integer
+}
+```
+
 ## Reviews
 | URI          | HTTP   | Body  | Description                     |
 | :----------- | :----: | :---: | :------------------------------ |
@@ -75,6 +143,17 @@
 | /reviews     | POST   | JSON  | Add a new hotel review          |
 | /reviews     | PUT    | JSON  | Update a hotel review           |
 | /reviews/:id | DELETE | -     | Delete a hotel review           |
+
+```javascript
+{
+    "id": integer,
+    "date": date,
+    "rating": integer,
+    "comment": string,
+    "user_id": integer,
+    "hotel_id": integer
+}
+```
 
 ## Facilities
 | URI             | HTTP   | Body  | Description                        |
@@ -85,6 +164,14 @@
 | /facilities     | PUT    | JSON  | Update a hotel facility            |
 | /facilities/:id | DELETE | -     | Delete a hotel facility            |
 
+```javascript
+{
+    "id": integer,
+    "name": string,
+    "category_id": integer
+}
+```
+
 ## Facility Categories
 | URI             | HTTP   | Body  | Description                           |
 | :-------------- | :----: | :---: | :------------------------------------ |
@@ -94,7 +181,14 @@
 | /categories     | PUT    | JSON  | Update a facility category            |
 | /categories/:id | DELETE | -     | Delete a facility category            |
 
-## Location
+```javascript
+{
+    "id": integer,
+    "name": string
+}
+```
+
+## Locations
 | URI            | HTTP   | Body  | Description                       |
 | :------------- | :----: | :---: | :-------------------------------- |
 | /locations     | GET    | -     | Get a list of all hotel locations |
@@ -102,6 +196,18 @@
 | /locations     | POST   | JSON  | Add a new hotel location          |
 | /locations     | PUT    | JSON  | Update a hotel location           |
 | /locations/:id | DELETE | -     | Delete a hotel location           |
+
+```javascript
+{
+    "id": integer,
+    "name": string,
+    "longitude": float,
+    "latitude": float,
+    "city": string,
+    "country": string,
+    "country_code": string
+}
+```
 
 ## Media (Photos)
 | URI        | HTTP   | Body  | Description                   |
@@ -111,3 +217,14 @@
 | /media     | POST   | JSON  | Add a new hotel media         |
 | /media     | PUT    | JSON  | Update a hotel media          |
 | /media/:id | DELETE | -     | Delete a hotel media          |
+
+```javascript
+{
+    "id": integer,
+    "name": string,
+    "description": string,
+    "url": string,
+    "width": integer,
+    "height": integer
+}
+```
