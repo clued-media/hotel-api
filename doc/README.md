@@ -88,7 +88,7 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
     "room_no": string,
     "description": string,
     "category": string,
-    "facilities": string,
+    "facilities": [Facility, Facility,...],
     "size": integer,
     "capacity": integer,
     "price": float
