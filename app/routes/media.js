@@ -2,9 +2,9 @@
 
 var router = require('../components/router');
 
-function Users() {
+function Media() {
     // Insert further API endpoints.
-    return router(require('../../data/users.json'));
+    return router(require('../../data/media.json'));
 }
 
-module.exports = Users();
+module.exports = Media();
