@@ -24,6 +24,5 @@ module.exports = function(){
 		}
 
 	}
-
 	w("./users.json", JSON.stringify(formatted_data));
 }

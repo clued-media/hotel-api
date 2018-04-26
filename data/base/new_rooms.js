@@ -14,8 +14,5 @@ module.exports = function(){
 			price: (-1).toFixed(2),
 		}
 	}
-
 	w("./rooms.json", JSON.stringify(formatted_data));
-
-	console.log(formatted_data);
 }

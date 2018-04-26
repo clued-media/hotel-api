@@ -14,7 +14,5 @@ module.exports = function(){
 	for(var i=0; i<lastnames.length; i++)
 		formatted_data.lastnames.push(lastnames[i]["lastname"]);	
 
-
 	w("./names.json", JSON.stringify(formatted_data));
-	console.log(formatted_data);
 }

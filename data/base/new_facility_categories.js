@@ -9,8 +9,5 @@ module.exports = function(){
 		}
 
 	}
-
 	w("./facility_categories.json", JSON.stringify(formatted_data));
-
-	console.log(formatted_data);
 }

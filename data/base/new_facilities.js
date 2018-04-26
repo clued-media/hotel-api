@@ -9,8 +9,5 @@ module.exports = function(){
 			category_id: -1,
 		}
 	}
-
 	w("./facilities.json", JSON.stringify(formatted_data));
-
-	console.log(formatted_data);
 }

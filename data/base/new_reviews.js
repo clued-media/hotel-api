@@ -13,8 +13,5 @@ module.exports = function(){
 		}
 
 	}
-
 	w("./reviews.json", JSON.stringify(formatted_data));
-
-	console.log(formatted_data);
 }
