@@ -32,6 +32,7 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
     "id": integer,
     "username": string,
     "email": string,
+    "password": string,
     "name": string,
     "bookings": [Booking, Booking,...],
     "payments": [Payment, Payment,...],
