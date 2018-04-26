@@ -1,14 +1,23 @@
 var w = require('./../utility/write');
+var names = require('./../names.json');
+var firstnamecount = names.firstnames.length;
+var lastnamecount = names.lastnames.length;
 
 module.exports = function(){
 	var formatted_data = {};
 	var id;
 	for(id=0; id<999; id++){
+		var firstnameid = Math.floor(Math.random()*firstnamecount);
+		var lastnameid = Math.floor(Math.random()*lastnamecount);
+
+		var firstname = names.firstnames[firstnameid];
+		var lastname = names.lastnames[lastnameid];
+
 		formatted_data[id] = {
-			username: "JoDo_" + id,
-			first_name: "John",
-			last_name: "Doe",
-			email: "JoDo_" + id + "@email.net",
+			first_name: firstname,
+			last_name: lastname,
+			username: firstname + lastname,
+			email: firstname + lastname + "@email.net",
 			bookings: [],
 			payments: [],
 			reviews: [],
@@ -17,6 +26,4 @@ module.exports = function(){
 	}
 
 	w("./users.json", JSON.stringify(formatted_data));
-
-	console.log(formatted_data);
 }
