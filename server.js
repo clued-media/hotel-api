@@ -1,4 +1,5 @@
 var express = require('express'),
+    logger = require('morgan'),
     app = express(),
     port = process.env.PORT || 3000,
     bodyParser = require('body-parser');
@@ -18,11 +19,7 @@ app.use('/locations', require('./app/routes/locations'));
 app.use('/media', require('./app/routes/media'));
 
 // enable logging requests
-// TODO: use some module to beautify this
-app.use((req, res, next) => {
-    console.log(req);
-    next();
-});
+app.use(logger('dev'));
 
 app.listen(port, () => {
     console.log('RESTful Web Server started on *:' + port);
