@@ -26,6 +26,7 @@ module.exports = function(){
 				media: []
 			}
 		}
+		id++;
 	})
 
 	w("./hotels.json", JSON.stringify(formatted_data));
