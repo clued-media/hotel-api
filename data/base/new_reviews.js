@@ -1,17 +1,18 @@
 var w = require('./../utility/write');
+var data = require('./../raw/hotels_usa_2.json');
 
 module.exports = function(){
 	all_reviews = [];
 	var id;
-	for(id=0; id<999; id++){
+	for(id=0; id<35000; id++){
 		var formatted_data = {};
 		formatted_data = {
 			id: id,
-			date: new Date(),
-			rating: Math.floor(Math.random() * 5) + 1,
-			comment: "this hotel was ...",
-			user_id: id,
-			hotel_id: id%347,
+			date: data[id]["reviews"]["date"],
+			rating: data[id]["reviews"]["rating"],
+			comment: data[id]["reviews"]["text"],
+			user_id: id%999,
+			hotel_id: id%35000,
 		}
 		all_reviews.push(formatted_data);
 	}
