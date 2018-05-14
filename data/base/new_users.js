@@ -1,5 +1,5 @@
 var w = require('./../utility/write');
-var names = require('./../names.json');
+var names = require('./../raw/names.json');
 var passwords = require('./../raw/passwords.json');
 var firstnamecount = names.firstnames.length;
 var lastnamecount = names.lastnames.length;
