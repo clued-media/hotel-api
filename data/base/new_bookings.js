@@ -10,9 +10,10 @@ module.exports = function(){
 			date: new Date(),
 			arrival_date: new Date(),
 			departure_date: new Date(),
-			user_id: -1,
+			user_id: id,
 			rooms: [],
 		}
+		formatted_data["rooms"][0] = id;
 		all_bookings.push(formatted_data);
 	}
 	w("./bookings.json", JSON.stringify(all_bookings));
