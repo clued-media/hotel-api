@@ -42,9 +42,32 @@ module.exports = function(){
 
 	data2.forEach(function(entry){
 		var formatted_data = {};
-		var name = entry[8];
-		var addr = entry[9];
 	
+		formatted_data = {
+			name: entry.name,
+			id: id,
+			address: {
+				city: entry.city,
+				street: entry.address,
+				country: entry.country,
+				state: entry.province 
+			},
+			users: [],
+			facilities: [],
+			rooms: [],
+			boookings: [],
+			payments: [],
+			reviews: [],
+			media: []
+		}
+		formatted_data["users"][0] = id;
+		formatted_data["users"][1] = id+600;
+		formatted_data["users"][2] = id+300;
+		formatted_data["facilities"][0] = id;
+		formatted_data["facilities"][1] = id-1;
+	
+		all_hotels.push(formatted_data);
+		id++;
 	})
 
 
