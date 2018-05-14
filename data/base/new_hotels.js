@@ -1,17 +1,20 @@
-var data = require('./../raw/hotels_usa.json');
+var data1 = require('./../raw/hotels_usa.json');
+var data2 = require('./../raw/hotels_usa_2.json');
 var w = require('./../utility/write');
 var facilities = require('./../facilities.json');
 
 module.exports = function(){
-	var formatted_data = {};
-	var id = 1;
-	data["data"].forEach(function(entry){
+	var all_hotels = [];
+	var id = 0;
+	data1["data"].forEach(function(entry){
+		var formatted_data = {};
 		var name = entry[8];
 		var addr = entry[9];
 
 		if(name != addr) {
-			formatted_data[id] = {
+			formatted_data = {
 				name: name,
+				id: id,
 				address: {
 					city: "New Orleans",
 					street: addr,
@@ -19,21 +22,31 @@ module.exports = function(){
 					state: "Louisiana"
 				},
 				users: [],
+				facilities: [],
 				rooms: [],
 				boookings: [],
 				payments: [],
 				reviews: [],
-				facilities: [],
 				media: []
 			}
-			formatted_data[id]["users"][0] = id;
-			formatted_data[id]["users"][1] = id+600;
-			formatted_data[id]["users"][2] = id+300;
-			formatted_data[id]["facilities"][0] = id;
-			formatted_data[id]["facilities"][1] = id-1;
+			formatted_data["users"][0] = id;
+			formatted_data["users"][1] = id+600;
+			formatted_data["users"][2] = id+300;
+			formatted_data["facilities"][0] = id;
+			formatted_data["facilities"][1] = id-1;
+		
+			all_hotels.push(formatted_data);
+			id++;
 		}
-
-		id++;
 	})
-	w("./hotels.json", JSON.stringify(formatted_data));
+
+	data2.forEach(function(entry){
+		var formatted_data = {};
+		var name = entry[8];
+		var addr = entry[9];
+	
+	})
+
+
+	w("./hotels.json", JSON.stringify(all_hotels));
 }
