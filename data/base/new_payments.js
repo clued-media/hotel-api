@@ -9,8 +9,8 @@ module.exports = function(){
 			id: id,
 			date: new Date(),
 			payment_method: "paypal",
-			amount: -1,
-			booking_id: -1,
+			amount: (Math.floor(Math.random()*200) + 20).toFixed(2),
+			booking_id: id,
 		}
 		all_payments.push(formatted_data);
 	}

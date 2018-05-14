@@ -10,12 +10,12 @@ fs.readdirSync(mod_path).forEach(file => {
 
 /* do not use these as we're done with them */
 /*
+payments = require('./base/new_payments');
+payments();
 hotels = require('./base/new_hotels');
 hotels();
 locations = require('./base/new_locations');
 locations();
-payments = require('./base/new_payments');
-payments();
 bookings = require('./base/new_bookings');
 bookings();
 rooms = require('./base/new_rooms');
