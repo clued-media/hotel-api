@@ -1,5 +1,6 @@
 var data = require('./../raw/hotels_usa.json');
 var w = require('./../utility/write');
+var facilities = require('./../facilities.json');
 
 module.exports = function(){
 	var formatted_data = {};
@@ -25,7 +26,10 @@ module.exports = function(){
 				facilities: [],
 				media: []
 			}
+			formatted_data[id]["facilities"][0] = id;
+			formatted_data[id]["facilities"][1] = id-1;
 		}
+
 		id++;
 	})
 	w("./hotels.json", JSON.stringify(formatted_data));
