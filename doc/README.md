@@ -40,6 +40,15 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
 }
 ```
 
+### Description
+
+Users are semi randomly generated.
+We used a database of real first and last names and randomly combined those to create users.
+The username is simply a string which first and last name combined, the username is then taken to form the email address.
+Passwords are taken from a database of common passwords, note that they're not hashed because this is not a Information Security course.
+Bookings, payments and reviews are randomly assigned to users.
+
+
 ## Hotels
 | URI                    | HTTP   | Body  | Description                                      |
 | :--------------------- | :----: | :---: | :----------------------------------------------- |
@@ -188,6 +197,10 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
     "name": string
 }
 ```
+
+### Description
+
+This is a small handcrafted data set of different facility types.
 
 ## Locations
 | URI            | HTTP   | Body  | Description                       |
