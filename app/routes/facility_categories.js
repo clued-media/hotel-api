@@ -1,10 +1,12 @@
 'use strict';
 
 var router = require('../components/router');
+var db = require('../../data/facility_categories.json');
 
-function Facility_categories() {
-    // Insert further API endpoints.
-    return router(require('../../data/facility_categories.json'));
+function Categories() {
+  var dbc = require('../components/db_client')(db);
+
+  return router(dbc);
 }
 
-module.exports = Facility_categories();
+module.exports = Categories();

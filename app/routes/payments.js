@@ -1,10 +1,12 @@
 'use strict';
 
 var router = require('../components/router');
+var db = require('../../data/payments.json');
 
 function Payments() {
-    // Insert further API endpoints.
-    return router(require('../../data/payments.json'));
+  var dbc = require('../components/db_client')(db);
+
+  return router(dbc);
 }
 
 module.exports = Payments();

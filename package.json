@@ -25,6 +25,7 @@
     },
     "homepage": "https://github.com/juop/semantic_web_services-course#readme",
     "devDependencies": {
+        "morgan": "^1.9.0",
         "nodemon": "^1.17.3"
     },
     "dependencies": {

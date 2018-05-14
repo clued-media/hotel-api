@@ -2,37 +2,38 @@
 
 var express = require('express');
 
-module.exports = (db = null) => {
-    var router = express.Router();
+module.exports = dbc => {
+  var router = express.Router();
 
-    /* GET REQUESTS */
-    router.get('/', (req, res, next) => {
-        res.send(JSON.stringify(db));
-        next();
-    });
+  /* GET REQUESTS */
+  router.get('/', (req, res, next) => {
+    res.send(dbc.all());
+    next();
+  });
 
-    router.get('/:id', (req, res, next) => {
-        res.send(JSON.stringify(db[req.params.id]));
-        next();
-    });
+  router.get('/:id', (req, res, next) => {
+    res.send(dbc.find(req.params.id));
+    next();
+  });
 
-    /* PUT REQUESTS */
-    router.put('/', (req, res, next) => {
-        res.send('TEST PUT!\n');
-        next();
-    });
+  /* PUT REQUESTS */
+  router.put('/', (req, res, next) => {
+    res.send('TEST PUT!\n');
+    next();
+  });
 
-    /* POST REQUESTS */
-    router.post('/', (req, res, next) => {
-        res.send('TEST POST!\n');
-        next();
-    });
+  /* POST REQUESTS */
+  router.post('/', (req, res, next) => {
+    res.send('TEST POST!\n');
+    next();
+  });
 
-    /* DELETE REQUESTS */
-    router.delete('/', (req, res, next) => {
-        res.send('TEST DELETE!\n');
-        next();
-    });
+  /* DELETE REQUESTS */
+  router.delete('/:id', (req, res, next) => {
+    // res.send(dbc.delete(req.params.id));
+    res.send('TEST DELETE!\n')
+    next();
+  });
 
-    return router;
+  return router;
 };
