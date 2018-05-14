@@ -1,10 +1,12 @@
 var w = require('./../utility/write');
 
 module.exports = function(){
-	var formatted_data = {};
+	var all_locations = [];
 	var id;
 	for(id=0; id<999; id++){
-		formatted_data[id] = {
+		var formatted_data = {};
+		formatted_data = {
+			id: id,
 			name: "location x",
 			longitude: 0.0,
 			latitude: 0.0,
@@ -12,7 +14,7 @@ module.exports = function(){
 			country: "",
 			country_code: ""
 		}
-
+		all_locations.push(formatted_data);
 	}
-	w("./locations.json", JSON.stringify(formatted_data));
+	w("./locations.json", JSON.stringify(all_locations));
 }
