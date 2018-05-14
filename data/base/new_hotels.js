@@ -40,7 +40,7 @@ module.exports = function(){
 			formatted_data["reviews"][0] = id;
 			formatted_data["rooms"][0] = id;
 			formatted_data["rooms"][1] = id+1;
-			formatted_data["media"][0] = id;
+			formatted_data["media"][0] = id%5;
 			formatted_data["bookings"][0] = id;
 		
 			all_hotels.push(formatted_data);
@@ -79,7 +79,7 @@ module.exports = function(){
 		formatted_data["reviews"][0] = id;
 		formatted_data["rooms"][0] = id;
 		formatted_data["rooms"][1] = id+1;
-		formatted_data["media"][0] = id;
+		formatted_data["media"][0] = id%5;
 		formatted_data["bookings"][0] = id;
 	
 		all_hotels.push(formatted_data);
