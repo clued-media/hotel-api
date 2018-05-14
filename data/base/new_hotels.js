@@ -24,7 +24,7 @@ module.exports = function(){
 				users: [],
 				facilities: [],
 				rooms: [],
-				boookings: [],
+				bookings: [],
 				payments: [],
 				reviews: [],
 				media: []
@@ -32,8 +32,16 @@ module.exports = function(){
 			formatted_data["users"][0] = id;
 			formatted_data["users"][1] = id+600;
 			formatted_data["users"][2] = id+300;
+			formatted_data["payments"][0] = id;
+			formatted_data["payments"][1] = id+600;
+			formatted_data["payments"][2] = id+300;
 			formatted_data["facilities"][0] = id;
 			formatted_data["facilities"][1] = id-1;
+			formatted_data["reviews"][0] = id;
+			formatted_data["rooms"][0] = id;
+			formatted_data["rooms"][1] = id+1;
+			formatted_data["media"][0] = id;
+			formatted_data["bookings"][0] = id;
 		
 			all_hotels.push(formatted_data);
 			id++;
@@ -55,7 +63,7 @@ module.exports = function(){
 			users: [],
 			facilities: [],
 			rooms: [],
-			boookings: [],
+			bookings: [],
 			payments: [],
 			reviews: [],
 			media: []
@@ -63,8 +71,16 @@ module.exports = function(){
 		formatted_data["users"][0] = id;
 		formatted_data["users"][1] = id+600;
 		formatted_data["users"][2] = id+300;
+		formatted_data["payments"][0] = id;
+		formatted_data["payments"][1] = id+600;
+		formatted_data["payments"][2] = id+300;
 		formatted_data["facilities"][0] = id;
 		formatted_data["facilities"][1] = id-1;
+		formatted_data["reviews"][0] = id;
+		formatted_data["rooms"][0] = id;
+		formatted_data["rooms"][1] = id+1;
+		formatted_data["media"][0] = id;
+		formatted_data["bookings"][0] = id;
 	
 		all_hotels.push(formatted_data);
 		id++;
