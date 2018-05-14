@@ -1,3 +1,5 @@
+data/backup/*
+
 # Logs
 logs
 *.log
