@@ -6,8 +6,8 @@ module.exports = function(){
 	var id;
 	for(id=0; id<999; id++){
 		formatted_data[id] = {
-			name: "facility x",
-			category_id: id%6
+			name: ft[id%13]["name"],
+			category_id: id%13
 		}
 	}
 	w("./facilities.json", JSON.stringify(formatted_data));
