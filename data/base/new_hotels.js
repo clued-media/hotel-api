@@ -26,6 +26,9 @@ module.exports = function(){
 				facilities: [],
 				media: []
 			}
+			formatted_data[id]["users"][0] = id;
+			formatted_data[id]["users"][1] = id+600;
+			formatted_data[id]["users"][2] = id+300;
 			formatted_data[id]["facilities"][0] = id;
 			formatted_data[id]["facilities"][1] = id-1;
 		}
