@@ -96,7 +96,6 @@ Bookings, payments and reviews are randomly assigned to users.
 | /rooms                |  POST  | JSON | Add a new hotel room                            |
 | /rooms                |   PUT  | JSON | Update a hotel room                             |
 | /rooms/:id            | DELETE |   -  | Delete a hotel room                             |
-| /rooms/:id/facilities |   GET  |   -  | Get a list of all facilities provided by a room |
 
 ```javascript
 {
@@ -104,7 +103,6 @@ Bookings, payments and reviews are randomly assigned to users.
     "room_no": string,
     "description": string,
     "category": string,
-    "facilities": [Facility, Facility,...],
     "size": integer,
     "capacity": integer,
     "price": float

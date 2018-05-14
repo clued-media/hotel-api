@@ -8,12 +8,11 @@ module.exports = function(){
 		formatted_data = {
 			id: id,
 			room_no: Math.floor(id/6),
-			description: ".. descriptive text ..",
-			category: ".. descriptive text ..",
-			facilities: [],
-			size: (-1).toFixed(2),
-			capacity: -1,
-			price: (-1).toFixed(2),
+			description: "awesome room",
+			category: "awesome",
+			size: (Math.floor(Math.random()*55) + 15).toFixed(2),
+			capacity: (Math.floor(Math.random()*6) + 1),
+			price: (Math.floor(Math.random()*200) + 20).toFixed(2),
 		}
 		all_rooms.push(formatted_data);
 	}
