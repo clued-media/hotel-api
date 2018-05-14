@@ -22,10 +22,13 @@ module.exports = function(){
 			username: firstname + lastname,
 			email: firstname + lastname + "@email.net",
 			password: passwords[id*2]["password"],
+			reviews: [],
 			bookings: [],
 			payments: [],
-			reviews: [],
 		}
+		formatted_data["reviews"][0] = id*34;
+		formatted_data["bookings"][0] = id;
+		formatted_data["payments"][0] = id; 
 		all_users.push(formatted_data);
 
 	}
