@@ -15,12 +15,7 @@ module.exports = function(){
 			formatted_data = {
 				name: name,
 				id: id,
-				address: {
-					city: "New Orleans",
-					street: addr,
-					country: "USA",
-					state: "Louisiana"
-				},
+				location: id,
 				users: [],
 				facilities: [],
 				rooms: [],
@@ -54,12 +49,7 @@ module.exports = function(){
 		formatted_data = {
 			name: entry.name,
 			id: id,
-			address: {
-				city: entry.city,
-				street: entry.address,
-				country: entry.country,
-				state: entry.province 
-			},
+			location: (id-346),
 			users: [],
 			facilities: [],
 			rooms: [],

@@ -1,20 +1,21 @@
 var w = require('./../utility/write');
+var data = require('./../raw/hotels_usa_2.json');
 
 module.exports = function(){
 	var all_locations = [];
-	var id;
-	for(id=0; id<999; id++){
+	var id = 0;
+	data.forEach(function(entry){
 		var formatted_data = {};
 		formatted_data = {
 			id: id,
-			name: "location x",
-			longitude: 0.0,
-			latitude: 0.0,
-			city: "",
-			country: "",
-			country_code: ""
+			longitude: entry.longitude,
+			latitude: entry.latitude,
+			city: entry.city,
+			country: entry.country,
+			country_code: "USA"
 		}
 		all_locations.push(formatted_data);
-	}
+		id++
+	})
 	w("./locations.json", JSON.stringify(all_locations));
 }

@@ -224,7 +224,6 @@ This is a small handcrafted data set of different facility types.
 ```javascript
 {
     "id": integer,
-    "name": string,
     "longitude": float,
     "latitude": float,
     "city": string,
