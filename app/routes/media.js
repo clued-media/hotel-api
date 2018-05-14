@@ -1,10 +1,12 @@
 'use strict';
 
 var router = require('../components/router');
+var db = require('../../data/media.json');
 
 function Media() {
-    // Insert further API endpoints.
-    return router(require('../../data/media.json'));
+  var dbc = require('../components/db_client')(db);
+
+  return router(dbc);
 }
 
 module.exports = Media();
