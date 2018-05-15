@@ -1,15 +1,16 @@
-{
-	"0": {"name": "Hotel"},
-	"1": {"name": "Motel"},
-	"2": {"name": "Spa"},
-	"3": {"name": "Casino"},
-	"4": {"name": "Resort"},
-	"5": {"name": "Luxury"},
-	"6": {"name": "Pool"},
-	"7": {"name": "Kitchen"},
-	"8": {"name": "Restroom"},
-	"9": {"name": "Laundry"},
-	"10": {"name": "Reception"},
-	"11": {"name": "Diner"},
-	"12": {"name": "Sports"}
-}
+[{
+  "id": 0,
+  "name": "Hotel Facilities"
+}, {
+  "id": 1,
+  "name": "Room Facilities"
+}, {
+  "id": 2,
+  "name": "Accessibility"
+}, {
+  "id": 3,
+  "name": "For Children"
+}, {
+  "id": 4,
+  "name": "Activities"
+}]
