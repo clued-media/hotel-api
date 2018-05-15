@@ -1,10 +1,9 @@
 'use strict';
 
 var router = require('../components/router');
-var db = require('../../data/facility_categories.json');
 
 function Categories() {
-  var dbc = require('../components/db_client')(db);
+  var dbc = require('../components/db_client')('./data/facility_categories.json');
 
   return router(dbc);
 }

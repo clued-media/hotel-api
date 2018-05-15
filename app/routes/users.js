@@ -1,10 +1,9 @@
 'use strict';
 
 var router = require('../components/router');
-var db = require('../../data/users.json');
 
 function Users() {
-  var dbc = require('../components/db_client')(db);
+  var dbc = require('../components/db_client')('./data/users.json');
   var users = router(dbc);
 
   users.get('/:id/bookings', (req, res, next) => {

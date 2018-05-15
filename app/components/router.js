@@ -18,20 +18,31 @@ module.exports = dbc => {
 
   /* PUT REQUESTS */
   router.put('/', (req, res, next) => {
-    res.send('TEST PUT!\n');
+    if (dbc.update(req.body))
+      res.status(200).send('Entry updated!');
+    else
+      res.status(404).send('Entry not updated!');
+
     next();
   });
 
   /* POST REQUESTS */
   router.post('/', (req, res, next) => {
-    res.send('TEST POST!\n');
+    if (dbc.create(req.body))
+      res.status(200).send('Entry created!');
+    else
+      res.status(500).send('Entry not created!');
+
     next();
   });
 
   /* DELETE REQUESTS */
   router.delete('/:id', (req, res, next) => {
-    // res.send(dbc.delete(req.params.id));
-    res.send('TEST DELETE!\n')
+    if (dbc.remove(req.params.id))
+      res.status(200).send('Entry deleted!');
+    else
+      res.status(404).send('Entry not deleted!');
+
     next();
   });
 
