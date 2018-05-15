@@ -54,9 +54,9 @@ module.exports = function() {
       createHotel(name);
   });
 
-  data2.forEach(function(entry) {
-    createHotel(entry.name);
-  });
+  // data2.forEach(function(entry) {
+  //   createHotel(entry.name);
+  // });
 
   w("./hotels.json", JSON.stringify(all_hotels));
 }
