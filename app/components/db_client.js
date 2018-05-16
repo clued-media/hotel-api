@@ -1,24 +1,55 @@
 'use strict';
 
-module.exports = db => {
+var fs = require("fs");
+var path = require("path");
+
+module.exports = dbPath => {
+  dbPath = path.resolve(dbPath);
+  var db = require(dbPath);
+
+  function _updateDB() {
+    try {
+      fs.writeFileSync(dbPath, JSON.stringify(db));
+
+      return true;
+    } catch (err) {
+      console.log(err);
+    }
+
+    return false;
+  }
+
   var all = function() {
     return db;
   };
 
   var find = function(id) {
-    return db[id];
+    return id < 0 || id >= db.length ? {} : db[id];
   };
 
   var create = function(entity) {
+    entity['id'] = db.length;
+    db.push(entity);
 
+    return _updateDB();
   };
 
-  var update = function(id, entity) {
-    db[id] = entity;
+  var update = function(entity) {
+    if (entity.id < 0 || entity.id >= db.length)
+      return false;
+
+    db[entity.id] = entity;
+
+    return _updateDB();
   };
 
   var remove = function(id) {
-    delete db[id];
+    if (id < 0 || id >= db.length)
+      return false;
+
+    db[id] = {};
+
+    return _updateDB();
   };
 
   return {
