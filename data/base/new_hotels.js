@@ -13,11 +13,11 @@ var media = require('../media.json');
 
 module.exports = function() {
   var hotels = [];
-  var id = 0;
+  var i = 0;
 
   function createHotel(name) {
     hotels.push({
-      id: id,
+      id: i,
       name: name,
       location: Math.floor(Math.random() * locations.length),
       users: utils.fillArray(0, 50, users.length, 'users'),
@@ -27,7 +27,7 @@ module.exports = function() {
       facilities: utils.fillArray(10, 30, facilities.length, 'facilities'),
       media: utils.fillArray(0, 5, media.length, 'media')
     });
-    id++;
+    i++;
   }
 
   data1["data"].forEach(function(entry) {

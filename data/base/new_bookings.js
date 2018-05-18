@@ -6,12 +6,12 @@ module.exports = function() {
   var bookings = [];
   var pmts = ['paypal', 'credit', 'debit', 'cash']
 
-  for (var id = 0; id < 1000; id++) {
+  for (var i = 0; i < 1000; i++) {
     var booking_date = utils.getDate();
     var arrival_date = utils.getDate(booking_date);
 
     bookings.push({
-      id: id,
+      id: i,
       date: booking_date,
       arrival_date: arrival_date,
       departure_date: utils.getDate(arrival_date),

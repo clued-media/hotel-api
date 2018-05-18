@@ -1,36 +1,30 @@
-var w = require('./../utility/write');
-var names = require('./../raw/names.json');
-var passwords = require('./../raw/passwords.json');
-var firstnamecount = names.firstnames.length;
-var lastnamecount = names.lastnames.length;
+var w = require('../utility/write');
+var utils = require('../utility/utils');
 
-module.exports = function(){
-	var all_users = [];
-	var id;
-	for(id=0; id<999; id++){
-		var formatted_data = {};
-		var firstnameid = Math.floor(Math.random()*firstnamecount);
-		var lastnameid = Math.floor(Math.random()*lastnamecount);
+var firstnames = require('../raw/firstnames.json');
+var lastnames = require('../raw/lastnames.json');
+var passwords = require('../raw/passwords.json');
+var bookings = require('../bookings.json');
+var reviews = require('../reviews.json');
 
-		var firstname = names.firstnames[firstnameid];
-		var lastname = names.lastnames[lastnameid];
+module.exports = function() {
+  var users = [];
 
-		formatted_data = {
-			id: id,
-			first_name: firstname,
-			last_name: lastname,
-			username: firstname + lastname,
-			email: firstname + lastname + "@email.net",
-			password: passwords[id*2]["password"],
-			reviews: [],
-			bookings: [],
-			payments: [],
-		}
-		formatted_data["reviews"][0] = id*34;
-		formatted_data["bookings"][0] = id;
-		formatted_data["payments"][0] = id; 
-		all_users.push(formatted_data);
+  for (var i = 0; i < 1000; i++) {
+    var firstname = firstnames[Math.floor(Math.random() * firstnames.length)]['firstname'];
+    var lastname = lastnames[Math.floor(Math.random() * lastnames.length)]['lastname'];
+    var username = firstname.toLowerCase() + lastname.toLowerCase();
 
-	}
-	w("./users.json", JSON.stringify(all_users));
+    users.push({
+      id: i,
+      first_name: firstname,
+      last_name: lastname,
+      username: username,
+      email: username + "@email.net",
+      password: passwords[Math.floor(Math.random() * passwords.length)]["password"],
+      bookings: utils.fillArray(0, 10, bookings.length, 'bookings'),
+      reviews: utils.fillArray(0, 10, reviews.length, 'reviews')
+    });
+  }
+  w("./users.json", JSON.stringify(users));
 }

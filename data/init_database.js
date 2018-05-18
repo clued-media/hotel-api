@@ -6,22 +6,11 @@
 //   module();
 // })
 
-/* do not use these as we're done with them */
-// payments = require('./base/new_payments');
-// payments();
-// hotels = require('./base/new_hotels');
-// hotels();
-// locations = require('./base/new_locations');
-// locations();
-// bookings = require('./base/new_bookings');
-// bookings();
-// rooms = require('./base/new_rooms');
-// rooms();
-// reviews = require('./base/new_reviews');
-// reviews();
-// facilities = require('./base/new_facilities');
-// facilities();
-// users = require('./base/new_users');
-// users();
-// names = require('./base/new_names');
-// names();
+// Uncomment line to initialize resource.
+// require('./base/new_locations')();
+// require('./base/new_users')();
+// require('./base/new_rooms')();
+// require('./base/new_bookings')();
+// require('./base/new_reviews')();
+// require('./base/new_facilities')();
+// require('./base/new_hotels')();

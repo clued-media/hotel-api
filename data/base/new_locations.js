@@ -1,12 +1,13 @@
-var w = require('./../utility/write');
-var data = require('./../raw/hotels_usa_2.json');
+var w = require('../utility/write');
+var data = require('../raw/hotels_usa_2.json');
 
 module.exports = function() {
-  var all_locations = [];
-  var id = 0;
+  var locations = [];
+  var i = 0;
+
   data.forEach(function(entry) {
     var formatted_data = {
-      id: id,
+      id: i,
       longitude: entry.longitude,
       latitude: entry.latitude,
       city: entry.city,
@@ -15,11 +16,11 @@ module.exports = function() {
     };
 
     // Add only new locations.
-    if (id == 0 || (formatted_data.longitude !== all_locations[id - 1].longitude && formatted_data.latitude !== all_locations[id - 1].latitude)) {
-      all_locations.push(formatted_data);
-      id++;
+    if (i == 0 || (formatted_data.longitude !== locations[i - 1].longitude && formatted_data.latitude !== locations[i - 1].latitude)) {
+      locations.push(formatted_data);
+      i++;
     }
   });
 
-  w("./locations.json", JSON.stringify(all_locations));
+  w("./locations.json", JSON.stringify(locations));
 }
