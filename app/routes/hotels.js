@@ -21,11 +21,6 @@ function Hotels() {
     next();
   });
 
-  hotels.get('/:id/payments', (req, res, next) => {
-    res.send(dbc.find(req.params.id)['payments']);
-    next();
-  });
-
   hotels.get('/:id/reviews', (req, res, next) => {
     res.send(dbc.find(req.params.id)['reviews']);
     next();

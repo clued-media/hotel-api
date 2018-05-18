@@ -11,11 +11,6 @@ function Users() {
     next();
   });
 
-  users.get('/:id/payments', (req, res, next) => {
-    res.send(dbc.find(req.params.id)['payments']);
-    next();
-  });
-
   users.get('/:id/reviews', (req, res, next) => {
     res.send(dbc.find(req.params.id)['reviews']);
     next();

@@ -1,6 +1,6 @@
 # REST API
 
-This REST API represents a _Hotel Booking API_ consisting of 10 different resources, each one accessible by its corresponding name (in plural form).
+This REST API represents a _Hotel Booking API_ consisting of 9 different resources, each one accessible by its corresponding name (in plural form).
 All supported HTTP calls with their meanings and JSON resource objects are listed below.
 
 ## Table of Contents
@@ -9,7 +9,6 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
 -   [Hotels](#hotels)
 -   [Rooms](#rooms)
 -   [Bookings](#bookings)
--   [Payments](#payments)
 -   [Reviews](#reviews)
 -   [Facilities](#facilities)
 -   [Facility Categories](#facility-categories)
@@ -38,7 +37,6 @@ All supported HTTP calls with their meanings and JSON resource objects are liste
     "email": string,
     "password": string,
     "bookings": [Booking, Booking,...],
-    "payments": [Payment, Payment,...],
     "reviews": [Review, Review,...]
 }
 ```
@@ -76,11 +74,9 @@ Bookings, payments and reviews are randomly assigned to users.
     "description": string,
     "location": Location,
     "star_rating": float,
-    "user_rating": float,
-    "guests": [User, User,...],
+    "users": [User, User,...],
     "rooms": [Room, Room,...],
     "bookings": [Booking, Booking,...],
-    "payments": [Payment, Payment,...],
     "reviews": [Review, Review,...],
     "facilities": [Facility, Facility,...],
     "media": [Media, Media,...]
@@ -126,28 +122,10 @@ Bookings, payments and reviews are randomly assigned to users.
     "date": date,
     "arrival_date": date,
     "departure_date": date,
-    "user_id": integer,
-    "rooms": [Room, Room,...]
-}
-```
-
-## Payments
-
-| URI           |  HTTP  | Body | Description                |
-| :------------ | :----: | :--: | :------------------------- |
-| /payments     |   GET  |   -  | Get a list of all payments |
-| /payments/:id |   GET  |   -  | Get details of a payment   |
-| /payments     |  POST  | JSON | Add a new payment          |
-| /payments     |   PUT  | JSON | Update a payment           |
-| /payments/:id | DELETE |   -  | Delete a payment           |
-
-```javascript
-{
-    "id": integer,
-    "date": date,
     "payment_method": string,
     "amount": float,
-    "booking_id": integer
+    "user": User,
+    "rooms": [Room, Room,...]
 }
 ```
 

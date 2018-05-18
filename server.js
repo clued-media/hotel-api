@@ -14,7 +14,6 @@ app.use('/users', require('./app/routes/users'));
 app.use('/hotels', require('./app/routes/hotels'));
 app.use('/rooms', require('./app/routes/rooms'));
 app.use('/bookings', require('./app/routes/bookings'));
-app.use('/payments', require('./app/routes/payments'));
 app.use('/reviews', require('./app/routes/reviews'));
 app.use('/facilities', require('./app/routes/facilities'));
 app.use('/categories', require('./app/routes/facility_categories'));
