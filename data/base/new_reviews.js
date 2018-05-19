@@ -9,7 +9,7 @@ module.exports = function() {
     reviews.push({
       id: i,
       date: data[i]["reviews"]["date"],
-      rating: data[i]["reviews"]["rating"],
+      rating: parseInt(data[i]["reviews"]["rating"]),
       comment: data[i]["reviews"]["text"],
       user: config.api + '/users/' + Math.floor(Math.random() * 1000),
       hotel: config.api + '/hotels/' + Math.floor(Math.random() * 1000),
