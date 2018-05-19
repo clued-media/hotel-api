@@ -1,5 +1,7 @@
 var w = require('../utility/write');
 var utils = require('../utility/utils');
+
+var users = require('../users.json');
 var rooms = require('../rooms.json');
 
 module.exports = function() {
@@ -17,7 +19,7 @@ module.exports = function() {
       departure_date: utils.getDate(arrival_date),
       payment_method: pmts[Math.floor(Math.random() * pmts.length)],
       amount: parseFloat((Math.random() * 500 + 20).toFixed(2)),
-      user: utils.config.api + '/users/' + Math.floor(Math.random() * 1000),
+      user: utils.config.api + '/users/' + Math.floor(Math.random() * users.length),
       rooms: utils.fillArray(1, 5, rooms.length, 'rooms'),
     });
   }

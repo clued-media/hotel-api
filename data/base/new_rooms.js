@@ -1,4 +1,7 @@
 var w = require('./../utility/write');
+var config = require('../utility/utils').config;
+
+var hotels = require('../hotels.json');
 
 module.exports = function() {
   var categories = ["Single Room", "Double Room", "Triple Room", "Quadruple Room", "Quintuple Room"];
@@ -15,6 +18,7 @@ module.exports = function() {
       size: parseInt(Math.floor(Math.random() * 55) + 15),
       capacity: catIndex + 1,
       price: parseFloat((Math.random() * 200 + 20).toFixed(2)),
+      hotel: config.api + '/hotels/' + Math.floor(Math.random() * hotels.length),
     });
   }
 
