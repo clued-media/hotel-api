@@ -164,9 +164,13 @@ Bookings, payments and reviews are randomly assigned to users.
 {
     "id": integer,
     "name": string,
-    "category_id": integer
+    "category": Category
 }
 ```
+
+### Description
+
+This is a small handcrafted data set of different facility types from existing booking websites.
 
 ## Facility Categories
 
@@ -187,7 +191,7 @@ Bookings, payments and reviews are randomly assigned to users.
 
 ### Description
 
-This is a small handcrafted data set of different facility types.
+This is a small handcrafted data set of different facility categories from existing booking websites.
 
 ## Locations
 

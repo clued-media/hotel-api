@@ -1,233 +1,233 @@
 [{
   "id": 0,
   "name": "24-Hour Room Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 1,
   "name": "24-Hour Front Desk",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 2,
   "name": "Airport Shuttle",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 3,
   "name": "Bell Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 4,
   "name": "Business Center",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 5,
   "name": "Concierge Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 6,
   "name": "Conference Rooms",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 7,
   "name": "Elevator",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 8,
   "name": "Express Check-in/out Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 9,
   "name": "Free WiFi in Lobby",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 10,
   "name": "Baggage Storage",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 11,
   "name": "Hotel Bar",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 12,
   "name": "Hotel Safe",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 13,
   "name": "Laundry Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 14,
   "name": "Non-smoking Rooms",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 15,
   "name": "Parking Lot",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 16,
   "name": "Pets Allowed",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 17,
   "name": "Restaurant",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 18,
   "name": "Room Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 19,
   "name": "WiFi in Lobby",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 20,
   "name": "Wake-up Service",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 21,
   "name": "Tour Desk",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 22,
   "name": "Air Conditioning",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 23,
   "name": "Bathroom with Bathtub",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 24,
   "name": "Bathroom with Shower",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 25,
   "name": "Cable TV",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 26,
   "name": "Central Heating",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 27,
   "name": "Cosmetic Mirror",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 28,
   "name": "Desk",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 29,
   "name": "Free WiFi in Rooms",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 30,
   "name": "Hairdryer",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 31,
   "name": "Internet",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 32,
   "name": "Room Safe",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 33,
   "name": "Satellite TV",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 34,
   "name": "Telephone",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 35,
   "name": "Television",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 36,
   "name": "WiFi in Rooms",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 37,
   "name": "Minibar",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 38,
   "name": "Wardrobe / Closet",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 39,
   "name": "Toilet",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 40,
   "name": "Terrace",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 41,
   "name": "Doctor On-site",
-  "category_id": 0
+  "category": "http://localhost:3000/categories/0"
 }, {
   "id": 42,
   "name": "Kitchen / Kitchenette",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 43,
   "name": "Microwave",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 44,
   "name": "Refrigerator",
-  "category_id": 1
+  "category": "http://localhost:3000/categories/1"
 }, {
   "id": 45,
   "name": "Wheelchair accessible",
-  "category_id": 2
+  "category": "http://localhost:3000/categories/2"
 }, {
   "id": 46,
   "name": "Child / Baby Crib",
-  "category_id": 3
+  "category": "http://localhost:3000/categories/3"
 }, {
   "id": 47,
   "name": "Childcare / Babysitting",
-  "category_id": 3
+  "category": "http://localhost:3000/categories/3"
 }, {
   "id": 48,
   "name": "Pool",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 49,
   "name": "Fitness Center / Gym",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 50,
   "name": "Solarium",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 51,
   "name": "Wellness / Spa",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 52,
   "name": "Sauna",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 53,
   "name": "Steam Room",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 54,
   "name": "Whirlpool / Jacuzzi",
-  "category_id": 4
+  "category": "http://localhost:3000/categories/4"
 }, {
   "id": 55,
   "name": "Accessible Paths / Hallways",
-  "category_id": 2
+  "category": "http://localhost:3000/categories/2"
 }, {
   "id": 56,
   "name": "Accessible Parking",
-  "category_id": 2
+  "category": "http://localhost:3000/categories/2"
 }, {
   "id": 57,
   "name": "Deaf Accessibility Equipment",
-  "category_id": 2
+  "category": "http://localhost:3000/categories/2"
 }]

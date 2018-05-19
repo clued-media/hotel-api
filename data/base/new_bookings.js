@@ -3,8 +3,8 @@ var utils = require('../utility/utils');
 var rooms = require('../rooms.json');
 
 module.exports = function() {
-  var bookings = [];
   var pmts = ['paypal', 'credit', 'debit', 'cash']
+  var bookings = [];
 
   for (var i = 0; i < 1000; i++) {
     var booking_date = utils.getDate();
