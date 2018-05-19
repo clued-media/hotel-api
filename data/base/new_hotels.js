@@ -19,7 +19,7 @@ module.exports = function() {
     hotels.push({
       id: i,
       name: name,
-      location: Math.floor(Math.random() * locations.length),
+      location: utils.config.api + '/locations/' + Math.floor(Math.random() * locations.length),
       users: utils.fillArray(0, 50, users.length, 'users'),
       rooms: utils.fillArray(10, 50, rooms.length, 'rooms'),
       bookings: utils.fillArray(0, 100, bookings.length, 'bookings'),

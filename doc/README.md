@@ -145,8 +145,8 @@ Bookings, payments and reviews are randomly assigned to users.
     "date": date,
     "rating": integer,
     "comment": string,
-    "user_id": integer,
-    "hotel_id": integer
+    "user": User,
+    "hotel": Hotel
 }
 ```
 
