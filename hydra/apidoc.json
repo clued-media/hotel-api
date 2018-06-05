@@ -1,6 +1,6 @@
 {
   "@context": {
-    "vocab": "/doc#",
+    "vocab": "https://sws-group-7-hotel-api.herokuapp.com/doc#",
     "hydra": "http://www.w3.org/ns/hydra/core#",
     "ApiDocumentation": "hydra:ApiDocumentation",
     "property": {
@@ -40,8 +40,10 @@
       "@type": "@id"
     }
   },
-  "@id": "/doc",
+  "@id": "https://sws-group-7-hotel-api.herokuapp.com/doc",
   "@type": "ApiDocumentation",
+  "title": "The API documentation",
+  "endpoint": "https://sws-group-7-hotel-api.herokuapp.com/",
   "supportedClass": [
     {
       "@id": "http://www.w3.org/ns/hydra/core#Resource",

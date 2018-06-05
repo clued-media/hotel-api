@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Register routes.
-app.use('/', (req, res, next) => {
-  res.send(require('./hydra/apidoc.json'));
+app.get('/', (req, res, next) => {
+  res.send(require('./hydra/entrypoint.json'));
   next();
 });
 app.use('/users', require('./app/routes/users'));

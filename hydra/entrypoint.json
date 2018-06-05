@@ -1,0 +1,6 @@
+{
+  "@context": "/hydra/contexts/EntryPoint.jsonld",
+  "@id": "https://sws-group-7-hotel-api.herokuapp.com/",
+  "@type": "EntryPoint",
+  "media": "/media/"
+}
