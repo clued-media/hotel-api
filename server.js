@@ -12,13 +12,17 @@ app.use(bodyParser.json());
 
 // Register routes.
 app.get('/', (req, res, next) => {
-  res.send(require('./hydra/entrypoint.json'));
-  next();
+  fs.readFile('./hydra/entrypoint.jsonld', 'utf8', (err, data) => {
+    res.send(JSON.parse(data));
+    next();
+  });
 });
 
 app.get('/doc', (req, res, next) => {
-  res.send(require('./hydra/apidoc.json'));
-  next();
+  fs.readFile('./hydra/apidoc.jsonld', 'utf8', (err, data) => {
+    res.send(JSON.parse(data));
+    next();
+  });
 });
 
 app.get('/contexts/:jsonld', (req, res, next) => {

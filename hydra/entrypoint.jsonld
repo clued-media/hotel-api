@@ -1,6 +1,6 @@
 {
   "@context": "/contexts/EntryPoint.jsonld",
-  "@id": "https://sws-group-7-hotel-api.herokuapp.com/",
+  "@id": "/",
   "@type": "EntryPoint",
   "media": "/media/"
 }
