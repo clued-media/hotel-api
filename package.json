@@ -1,8 +1,8 @@
 {
-  "name": "ex04",
+  "name": "hotel-api",
   "version": "1.0.0",
   "description": "#RESTful Semantically Annotated Web Services",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
@@ -12,7 +12,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juop/semantic_web_services-course.git"
+    "url": "git+https://github.com/sws-group-7/hotel-api.git"
   },
   "keywords": [
     "REST",
@@ -21,9 +21,9 @@
     "Services"
   ],
   "bugs": {
-    "url": "https://github.com/juop/semantic_web_services-course/issues"
+    "url": "https://github.com/sws-group-7/hotel-api/issues"
   },
-  "homepage": "https://github.com/juop/semantic_web_services-course#readme",
+  "homepage": "https://github.com/sws-group-7/hotel-api#readme",
   "devDependencies": {
     "morgan": "^1.9.0",
     "nodemon": "^1.17.3"
