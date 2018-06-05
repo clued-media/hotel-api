@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "vocab": "/doc#",
+    "Media": "vocab:Media",
+    "name": "vocab:Media/name",
+    "description": "vocab:Media/description",
+    "url": {
+      "@id": "vocab:Media/url",
+      "@type": "@id"
+    },
+    "width": "vocab:Media/width",
+    "height": "vocab:Media/height"
+  }
+}

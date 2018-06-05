@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "vocab": "/doc#",
+    "EntryPoint": "vocab:EntryPoint",
+    "media": {
+      "@id": "vocab:EntryPoint/media",
+      "@type": "@id"
+    }
+  }
+}

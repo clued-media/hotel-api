@@ -1,0 +1,6 @@
+{
+  "@context": "/contexts/EntryPoint.jsonld",
+  "@id": "/",
+  "@type": "EntryPoint",
+  "media": "/media/"
+}
