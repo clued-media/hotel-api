@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 // Register routes.
 app.get('/', (req, res, next) => {
   fs.readFile('./hydra/entrypoint.jsonld', 'utf8', (err, data) => {
+    res.setHeader('Content-Type', 'application/ld+json');
     res.send(JSON.parse(data));
     next();
   });
