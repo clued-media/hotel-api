@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Set header to serve JSON-LD content to clients.
 app.use((req, res, next) => {
-  res.contentType('Content-Type', 'application/ld+json');
+  res.contentType('application/ld+json');
   next();
 })
 
