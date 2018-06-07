@@ -1,12 +1,14 @@
 {
-  "@context": "https://sws-group-7-hotel-api.herokuapp.com/contexts/EntryPoint.jsonld",
-  "@id": {
-    "@id": "https://sws-group-7-hotel-api.herokuapp.com/"
+  "@context": {
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "vocab": "https://sws-group-7-hotel-api.herokuapp.com/vocab#",
+    "EntryPoint": "vocab:EntryPoint",
+    "media": {
+      "@id": "vocab:EntryPoint/media",
+      "@type": "@id"
+    }
   },
-  "@type": {
-    "@id":"https://sws-group-7-hotel-api.herokuapp.com/doc#EntryPoint"
-  },
-  "media": {
-    "@id":"https://sws-group-7-hotel-api.herokuapp.com/media"
-  }
+  "@id": "https://sws-group-7-hotel-api.herokuapp.com/",
+  "@type": "EntryPoint",
+  "media": "https://sws-group-7-hotel-api.herokuapp.com/media"
 }

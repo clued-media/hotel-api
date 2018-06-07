@@ -18,7 +18,7 @@ app.get('/', (req, res, next) => {
   });
 });
 
-app.get('/doc', (req, res, next) => {
+app.get('/vocab', (req, res, next) => {
   fs.readFile('./hydra/apidoc.jsonld', 'utf8', (err, data) => {
     res.send(JSON.parse(data));
     next();
@@ -31,6 +31,7 @@ app.get('/contexts/:jsonld', (req, res, next) => {
     next();
   });
 });
+
 app.use('/users', require('./app/routes/users'));
 app.use('/hotels', require('./app/routes/hotels'));
 app.use('/rooms', require('./app/routes/rooms'));
