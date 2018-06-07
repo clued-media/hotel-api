@@ -9,11 +9,15 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+// Set header to serve JSON-LD content to clients.
+app.use((req, res, next) => {
+  res.contentType('Content-Type', 'application/ld+json');
+  next();
+})
 
 // Register routes.
 app.get('/', (req, res, next) => {
   fs.readFile('./hydra/entrypoint.jsonld', 'utf8', (err, data) => {
-    res.setHeader('Content-Type', 'application/ld+json');
     res.send(JSON.parse(data));
     next();
   });

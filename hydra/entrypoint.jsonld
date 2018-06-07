@@ -1,14 +1,6 @@
 {
-  "@context": {
-    "hydra": "http://www.w3.org/ns/hydra/core#",
-    "vocab": "https://sws-group-7-hotel-api.herokuapp.com/vocab#",
-    "EntryPoint": "vocab:EntryPoint",
-    "media": {
-      "@id": "vocab:EntryPoint/media",
-      "@type": "@id"
-    }
-  },
-  "@id": "https://sws-group-7-hotel-api.herokuapp.com/",
+  "@context": "/contexts/EntryPoint.jsonld",
+  "@id": "/",
   "@type": "EntryPoint",
-  "media": "https://sws-group-7-hotel-api.herokuapp.com/media"
+  "media": "/media"
 }
