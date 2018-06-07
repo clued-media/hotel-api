@@ -1,6 +1,12 @@
 {
   "@context": "https://sws-group-7-hotel-api.herokuapp.com/contexts/EntryPoint.jsonld",
-  "@id": "https://sws-group-7-hotel-api.herokuapp.com/",
-  "@type": "EntryPoint",
-  "media": "https://sws-group-7-hotel-api.herokuapp.com/media/"
+  "@id": {
+    "@id": "https://sws-group-7-hotel-api.herokuapp.com/"
+  },
+  "@type": {
+    "@id":"https://sws-group-7-hotel-api.herokuapp.com/doc#EntryPoint"
+  },
+  "media": {
+    "@id":"https://sws-group-7-hotel-api.herokuapp.com/media"
+  }
 }
