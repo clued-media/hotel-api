@@ -1,5 +1,5 @@
 {
-  "@context": "/api/v1/contexts/ApiDoc.jsonld",
+  "@context": "/api/v1/contexts/apiDoc",
   "@id": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab",
   "@type": "ApiDocumentation",
   "title": "The API documentation",

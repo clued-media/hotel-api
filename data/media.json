@@ -1,5 +1,5 @@
 [{
-		"@context": "/api/v1/contexts/Media.jsonld",
+		"@context": "/api/v1/contexts/media",
 		"@id": "/api/v1/media/0",
 		"@type": "Media",
 		"name": "55038041.jpg",
@@ -9,7 +9,7 @@
 		"height": 683
 	},
 	{
-		"@context": "/api/v1/contexts/Media.jsonld",
+		"@context": "/api/v1/contexts/media",
 		"@id": "/api/v1/media/1",
 		"@type": "Media",
 		"name": "-666610__189437.jpg",
@@ -19,7 +19,7 @@
 		"height": 413
 	},
 	{
-		"@context": "/api/v1/contexts/Media.jsonld",
+		"@context": "/api/v1/contexts/media",
 		"@id": "/api/v1/media/2",
 		"@type": "Media",
 		"name": "Berlin_Mitte_Ramada_Hotel_Karl-Liebknecht-Straße.JPG",
@@ -29,7 +29,7 @@
 		"height": 1439
 	},
 	{
-		"@context": "/api/v1/contexts/Media.jsonld",
+		"@context": "/api/v1/contexts/media",
 		"@id": "/api/v1/media/3",
 		"@type": "Media",
 		"name": "Hotel_Ritz_Paris.jpg",
@@ -39,7 +39,7 @@
 		"height": 1440
 	},
 	{
-		"@context": "/api/v1/contexts/Media.jsonld",
+		"@context": "/api/v1/contexts/media",
 		"@id": "/api/v1/media/4",
 		"@type": "Media",
 		"name": "paris-hotel-casino-las-vegas-nv.jpg",

@@ -5,7 +5,7 @@ var path = require('path');
 
 module.exports = dbName => {
   var dbPath = path.resolve('./data/' + dbName + '.json');
-  var collection = require(path.resolve('./data/collections/' + dbName + '.json'));
+  var collection = require(path.resolve('./hydra/collections/' + dbName + '.json'));
   var db = require(dbPath);
 
   function _updateDB() {

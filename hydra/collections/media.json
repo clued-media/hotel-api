@@ -1,5 +1,5 @@
 {
-	"@context": "/api/v1/contexts/Collection.jsonld",
+	"@context": "/api/v1/contexts/collection",
 	"@type": "Collection",
 	"@id": "/api/v1/media",
 	"members": [{

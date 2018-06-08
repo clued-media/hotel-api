@@ -3,8 +3,10 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   bodyParser = require('body-parser'),
-  fs = require('fs'),
   config = require('./config.json');
+
+var apidoc = require('./hydra/apidoc.json'),
+  entrypoint = require('./hydra/entrypoint.json');
 
 // Init middlewares.
 app.use(bodyParser.urlencoded({
@@ -20,36 +22,18 @@ app.use((req, res, next) => {
 });
 
 app.get(config.namespace + '/', (req, res, next) => {
-  fs.readFile('./hydra/entrypoint.jsonld', 'utf8', (err, data) => {
-    if (err) {
-      res.sendStatus(404);
-    } else {
-      res.send(JSON.parse(data));
-      next();
-    }
-  });
+  res.send(entrypoint);
+  next();
 });
 
 app.get(config.namespace + '/vocab', (req, res, next) => {
-  fs.readFile('./hydra/apidoc.jsonld', 'utf8', (err, data) => {
-    if (err) {
-      res.sendStatus(404);
-    } else {
-      res.send(JSON.parse(data));
-      next();
-    }
-  });
+  res.send(apidoc);
+  next();
 });
 
-app.get(config.namespace + '/contexts/:jsonld', (req, res, next) => {
-  fs.readFile('./hydra/contexts/' + req.params.jsonld, 'utf8', (err, data) => {
-    if (err) {
-      res.sendStatus(404);
-    } else {
-      res.send(JSON.parse(data));
-      next();
-    }
-  });
+app.get(config.namespace + '/contexts/:resource', (req, res, next) => {
+  res.send(require('./hydra/contexts/' + req.params.resource + '.json'));
+  next();
 });
 
 // app.use(config.namespace + '/users', require('./app/routes/users'));
