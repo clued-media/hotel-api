@@ -13,6 +13,14 @@
       "supportedProperty": []
     },
     {
+      "@id": "vocab:TestRsrc",
+      "@type": "hydra:Class",
+      "hydra:title": "TestResource",
+      "hydra:description": null,
+      "supportedOperation": [],
+      "supportedProperty": []
+    },
+    {
       "@id": "http://www.w3.org/ns/hydra/core#Collection",
       "@type": "hydra:Class",
       "hydra:title": "Collection",
