@@ -4,34 +4,28 @@
   "@type": "ApiDocumentation",
   "title": "The API documentation",
   "entrypoint": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/",
-  "supportedClass": [
-    {
+  "supportedClass": [{
       "@id": "http://www.w3.org/ns/hydra/core#Resource",
       "@type": "hydra:Class",
       "hydra:title": "Resource",
       "hydra:description": null,
-      "supportedOperation": [
-      ],
-      "supportedProperty": [
-      ]
+      "supportedOperation": [],
+      "supportedProperty": []
     },
     {
       "@id": "http://www.w3.org/ns/hydra/core#Collection",
       "@type": "hydra:Class",
       "hydra:title": "Collection",
       "hydra:description": null,
-      "supportedOperation": [
-      ],
-      "supportedProperty": [
-        {
-          "property": "http://www.w3.org/ns/hydra/core#member",
-          "hydra:title": "members",
-          "hydra:description": "The members of this collection.",
-          "required": null,
-          "readonly": false,
-          "writeonly": false
-        }
-      ]
+      "supportedOperation": [],
+      "supportedProperty": [{
+        "property": "http://www.w3.org/ns/hydra/core#member",
+        "hydra:title": "members",
+        "hydra:description": "The members of this collection.",
+        "required": null,
+        "readonly": false,
+        "writeonly": false
+      }]
     },
     {
       "@id": "vocab:EntryPoint",
@@ -39,64 +33,55 @@
       "subClassOf": null,
       "label": "EntryPoint",
       "description": "The main entry point or homepage of the API.",
-      "supportedOperation": [
-        {
-          "@id": "_:entry_point",
-          "@type": "hydra:Operation",
-          "method": "GET",
-          "label": "The APIs main entry point.",
-          "description": null,
-          "expects": null,
-          "returns": "vocab:EntryPoint",
-          "statusCodes": [
+      "supportedOperation": [{
+        "@id": "_:entry_point",
+        "@type": "hydra:Operation",
+        "method": "GET",
+        "label": "The APIs main entry point.",
+        "description": null,
+        "expects": null,
+        "returns": "vocab:EntryPoint",
+        "statusCodes": []
+      }],
+      "supportedProperty": [{
+        "property": {
+          "@id": "vocab:EntryPoint/media",
+          "@type": "hydra:Link",
+          "label": "media",
+          "description": "The collection of all media",
+          "domain": "vocab:EntryPoint",
+          "range": "http://www.w3.org/ns/hydra/core#Collection",
+          "supportedOperation": [{
+              "@id": "_:media_create",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Creates a new Media entity",
+              "description": null,
+              "expects": "vocab:Media",
+              "returns": "vocab:Media",
+              "statusCodes": [{
+                "code": 201,
+                "description": "If the Media entity was created successfully."
+              }]
+            },
+            {
+              "@id": "_:media_collection_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves all Media entities",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": []
+            }
           ]
-        }
-      ],
-      "supportedProperty": [
-        {
-          "property": {
-            "@id": "vocab:EntryPoint/media",
-            "@type": "hydra:Link",
-            "label": "media",
-            "description": "The collection of all media",
-            "domain": "vocab:EntryPoint",
-            "range": "http://www.w3.org/ns/hydra/core#Collection",
-            "supportedOperation": [
-              {
-                "@id": "_:media_create",
-                "@type": "hydra:Operation",
-                "method": "POST",
-                "label": "Creates a new Media entity",
-                "description": null,
-                "expects": "vocab:Media",
-                "returns": "vocab:Media",
-                "statusCodes": [
-                  {
-                    "code": 201,
-                    "description": "If the Media entity was created successfully."
-                  }
-                ]
-              },
-              {
-                "@id": "_:media_collection_retrieve",
-                "@type": "hydra:Operation",
-                "method": "GET",
-                "label": "Retrieves all Media entities",
-                "description": null,
-                "expects": null,
-                "returns": "http://www.w3.org/ns/hydra/core#Collection",
-                "statusCodes": [
-                ]
-              }
-            ]
-          },
-          "hydra:title": "media",
-          "hydra:description": "The collection of all media",
-          "required": null,
-          "readonly": true,
-          "writeonly": false
-        }
-      ]
+        },
+        "hydra:title": "media",
+        "hydra:description": "The collection of all media",
+        "required": null,
+        "readonly": true,
+        "writeonly": false
+      }]
     },
     {
       "@id": "vocab:Media",
@@ -104,8 +89,7 @@
       "subClassOf": null,
       "label": "Media",
       "description": "Media",
-      "supportedOperation": [
-        {
+      "supportedOperation": [{
           "@id": "_:media_retrieve",
           "@type": "hydra:Operation",
           "method": "GET",
@@ -113,12 +97,10 @@
           "description": null,
           "expects": null,
           "returns": "vocab:Media",
-          "statusCodes": [
-            {
-              "code": 404,
-              "description": "If the Media entity wasn't found."
-            }
-          ]
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Media entity wasn't found."
+          }]
         },
         {
           "@id": "_:media_replace",
@@ -128,12 +110,10 @@
           "description": null,
           "expects": "vocab:Media",
           "returns": "vocab:Media",
-          "statusCodes": [
-            {
-              "code": 404,
-              "description": "If the Media entity wasn't found."
-            }
-          ]
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Media entity wasn't found."
+          }]
         },
         {
           "@id": "_:media_delete",
@@ -143,16 +123,13 @@
           "description": null,
           "expects": null,
           "returns": "http://www.w3.org/2002/07/owl#Nothing",
-          "statusCodes": [
-            {
-              "code": 404,
-              "description": "If the Media entity wasn't found."
-            }
-          ]
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Media entity wasn't found."
+          }]
         }
       ],
-      "supportedProperty": [
-        {
+      "supportedProperty": [{
           "property": {
             "@id": "vocab:Media/name",
             "@type": "rdf:Property",
@@ -160,8 +137,7 @@
             "description": "The name of the Media entity",
             "domain": "vocab:Media",
             "range": "http://www.w3.org/2001/XMLSchema#string",
-            "supportedOperation": [
-            ]
+            "supportedOperation": []
           },
           "hydra:title": "name",
           "hydra:description": "The name of the Media entity",
@@ -177,8 +153,7 @@
             "description": "The description of the Media entity",
             "domain": "vocab:Media",
             "range": "http://www.w3.org/2001/XMLSchema#string",
-            "supportedOperation": [
-            ]
+            "supportedOperation": []
           },
           "hydra:title": "description",
           "hydra:description": "The description of the Media entity",
@@ -194,8 +169,7 @@
             "description": "The url of the Media entity",
             "domain": "vocab:Media",
             "range": "http://www.w3.org/ns/hydra/core#Resource",
-            "supportedOperation": [
-            ]
+            "supportedOperation": []
           },
           "hydra:title": "url",
           "hydra:description": "The url of the Media entity",
@@ -211,8 +185,7 @@
             "description": "The width of the Media entity",
             "domain": "vocab:Media",
             "range": "http://www.w3.org/2001/XMLSchema#int",
-            "supportedOperation": [
-            ]
+            "supportedOperation": []
           },
           "hydra:title": "width",
           "hydra:description": "The width of the Media entity",
@@ -228,8 +201,7 @@
             "description": "The height of the Media entity",
             "domain": "vocab:Media",
             "range": "http://www.w3.org/2001/XMLSchema#int",
-            "supportedOperation": [
-            ]
+            "supportedOperation": []
           },
           "hydra:title": "height",
           "hydra:description": "The height of the Media entity",
