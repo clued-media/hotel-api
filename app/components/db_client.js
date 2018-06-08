@@ -1,7 +1,7 @@
 'use strict';
 
-var fs = require("fs");
-var path = require("path");
+var fs = require('fs');
+var path = require('path');
 
 module.exports = dbPath => {
   dbPath = path.resolve(dbPath);
@@ -19,33 +19,35 @@ module.exports = dbPath => {
     return false;
   }
 
-  var all = function() {
+  var all = function () {
     return db;
   };
 
-  var find = function(id) {
+  var find = function (id) {
     return id < 0 || id >= db.length ? {} : db[id];
   };
 
-  var create = function(entity) {
+  var create = function (entity) {
     entity['id'] = db.length;
     db.push(entity);
 
     return _updateDB();
   };
 
-  var update = function(entity) {
-    if (entity.id < 0 || entity.id >= db.length)
+  var update = function (entity) {
+    if (entity.id < 0 || entity.id >= db.length) {
       return false;
+    }
 
     db[entity.id] = entity;
 
     return _updateDB();
   };
 
-  var remove = function(id) {
-    if (id < 0 || id >= db.length)
+  var remove = function (id) {
+    if (id < 0 || id >= db.length) {
       return false;
+    }
 
     db[id] = {};
 
