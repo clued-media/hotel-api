@@ -13,9 +13,9 @@
       "supportedProperty": []
     },
     {
-      "@id": "vocab:TestRsrc",
+      "@id": "http://www.w3.org/ns/hydra/core#Resource",
       "@type": "hydra:Class",
-      "hydra:title": "TestResource",
+      "hydra:title": "TestResource2",
       "hydra:description": null,
       "supportedOperation": [],
       "supportedProperty": []
