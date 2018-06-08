@@ -1,41 +1,50 @@
-[
-	{
-		"id": 0,
+[{
+		"@context": "/api/v1/contexts/Media.jsonld",
+		"@id": "/api/v1/media/0",
+		"@type": "Media",
 		"name": "55038041.jpg",
 		"description": "some fancy pool",
-		"url": "data/img/55038041.jpg",
+		"url": "/data/img/55038041.jpg",
 		"width": 1024,
 		"height": 683
 	},
 	{
-		"id": 1,
+		"@context": "/api/v1/contexts/Media.jsonld",
+		"@id": "/api/v1/media/1",
+		"@type": "Media",
 		"name": "-666610__189437.jpg",
 		"description": "pool",
-		"url": "data/img/-666610__189437.jpg",
+		"url": "/data/img/-666610__189437.jpg",
 		"width": 500,
 		"height": 413
 	},
 	{
-		"id": 2,
+		"@context": "/api/v1/contexts/Media.jsonld",
+		"@id": "/api/v1/media/2",
+		"@type": "Media",
 		"name": "Berlin_Mitte_Ramada_Hotel_Karl-Liebknecht-Straße.JPG",
 		"description": "some big hotel",
-		"url": "data/img/Berlin_Mitte_Ramada_Hotel_Karl-Liebknecht-Straße.JPG",
+		"url": "/data/img/Berlin_Mitte_Ramada_Hotel_Karl-Liebknecht-Straße.JPG",
 		"width": 2048,
 		"height": 1439
 	},
 	{
-		"id": 3,
+		"@context": "/api/v1/contexts/Media.jsonld",
+		"@id": "/api/v1/media/3",
+		"@type": "Media",
 		"name": "Hotel_Ritz_Paris.jpg",
 		"description": "some fancy hotel",
-		"url": "data/img/Hotel_Ritz_Paris.jpg",
+		"url": "/data/img/Hotel_Ritz_Paris.jpg",
 		"width": 1915,
 		"height": 1440
 	},
 	{
-		"id": 4,
+		"@context": "/api/v1/contexts/Media.jsonld",
+		"@id": "/api/v1/media/4",
+		"@type": "Media",
 		"name": "paris-hotel-casino-las-vegas-nv.jpg",
 		"description": "some fancy pool",
-		"url": "data/img/1024ris-hotel-casino-las-vegas-nv.jpg",
+		"url": "/data/img/1024ris-hotel-casino-las-vegas-nv.jpg",
 		"width": 1499,
 		"height": 1920
 	}
