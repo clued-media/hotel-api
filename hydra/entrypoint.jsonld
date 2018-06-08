@@ -2,5 +2,5 @@
   "@context": "/api/v1/contexts/EntryPoint.jsonld",
   "@id": "/api/v1",
   "@type": "EntryPoint",
-  "allMedia": "/api/v1/media"
+  "media": "/api/v1/media"
 }

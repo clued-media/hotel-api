@@ -1,54 +1,13 @@
 {
-  "@context": {
-    "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
-    "hydra": "http://www.w3.org/ns/hydra/core#",
-    "ApiDocumentation": "hydra:ApiDocumentation",
-    "property": {
-        "@id": "hydra:property",
-        "@type": "@id"
-    },
-    "readonly": "hydra:readonly",
-    "writeonly": "hydra:writeonly",
-    "supportedClass": "hydra:supportedClass",
-    "supportedProperty": "hydra:supportedProperty",
-    "supportedOperation": "hydra:supportedOperation",
-    "method": "hydra:method",
-    "expects": {
-        "@id": "hydra:expects",
-        "@type": "@id"
-    },
-    "returns": {
-        "@id": "hydra:returns",
-        "@type": "@id"
-    },
-    "statusCodes": "hydra:statusCodes",
-    "code": "hydra:statusCode",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "label": "rdfs:label",
-    "description": "rdfs:comment",
-    "domain": {
-        "@id": "rdfs:domain",
-        "@type": "@id"
-    },
-    "range": {
-        "@id": "rdfs:range",
-        "@type": "@id"
-    },
-    "subClassOf": {
-        "@id": "rdfs:subClassOf",
-        "@type": "@id"
-    }
-  },
+  "@context": "/api/v1/contexts/ApiDoc.jsonld",
   "@id": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab",
   "@type": "ApiDocumentation",
   "title": "The API documentation",
   "entrypoint": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/",
-  "supportedClass": [
-    {
+  "supportedClass": [{
       "@id": "http://www.w3.org/ns/hydra/core#Resource",
       "@type": "hydra:Class",
-      "hydra:title": "TestResource2",
+      "hydra:title": "Resource",
       "hydra:description": null,
       "supportedOperation": [],
       "supportedProperty": []
@@ -214,9 +173,9 @@
       }],
       "supportedProperty": [{
         "property": {
-          "@id": "vocab:EntryPoint/allMedia",
+          "@id": "vocab:EntryPoint/media",
           "@type": "hydra:Link",
-          "label": "all_media",
+          "label": "media",
           "description": "The collection of all media",
           "domain": "vocab:EntryPoint",
           "range": "http://www.w3.org/ns/hydra/core#Collection",
@@ -245,7 +204,7 @@
             }
           ]
         },
-        "hydra:title": "all_media",
+        "hydra:title": "media",
         "hydra:description": "The collection of all media",
         "required": null,
         "readonly": true,
