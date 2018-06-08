@@ -11,13 +11,18 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
+app.get('/', (req, res, next) => {
+  res.setHeader('Link', ['<https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab/>', 'rel="http://www.w3.org/ns/hydra/core#apiDocumentation"']);
+  next();
+});
+
 // Set header to serve JSON-LD content to clients.
 app.use((req, res, next) => {
   res.contentType('application/ld+json');
   next();
-})
+});
 
-// Register routes.
 app.get(config.namespace + '/', (req, res, next) => {
   fs.readFile('./hydra/entrypoint.jsonld', 'utf8', (err, data) => {
     if (err) {
