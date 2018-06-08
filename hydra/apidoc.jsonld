@@ -173,9 +173,9 @@
       }],
       "supportedProperty": [{
         "property": {
-          "@id": "vocab:EntryPoint/medias",
+          "@id": "vocab:EntryPoint/allMedia",
           "@type": "hydra:Link",
-          "label": "medias",
+          "label": "all_media",
           "description": "The collection of all media",
           "domain": "vocab:EntryPoint",
           "range": "http://www.w3.org/ns/hydra/core#Collection",
@@ -204,7 +204,7 @@
             }
           ]
         },
-        "hydra:title": "media",
+        "hydra:title": "all_media",
         "hydra:description": "The collection of all media",
         "required": null,
         "readonly": true,
