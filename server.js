@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // Set header to serve JSON-LD content to clients.
 app.use((req, res, next) => {
   res.contentType('application/ld+json');
-  res.setHeader('Link', ['<https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab/>', 'rel="http://www.w3.org/ns/hydra/core#apiDocumentation"']);
+  res.setHeader('Link', '<https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab/>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"');
   next();
 });
 
