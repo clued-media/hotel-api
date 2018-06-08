@@ -3,8 +3,9 @@
 var fs = require('fs');
 var path = require('path');
 
-module.exports = dbPath => {
-  dbPath = path.resolve(dbPath);
+module.exports = dbName => {
+  var dbPath = path.resolve('./data/' + dbName + '.json');
+  var collection = require(path.resolve('./data/collections/' + dbName + '.json'));
   var db = require(dbPath);
 
   function _updateDB() {
@@ -20,7 +21,7 @@ module.exports = dbPath => {
   }
 
   var all = function () {
-    return db;
+    return collection;
   };
 
   var find = function (id) {

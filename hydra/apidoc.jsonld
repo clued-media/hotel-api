@@ -28,62 +28,6 @@
       }]
     },
     {
-      "@id": "vocab:EntryPoint",
-      "@type": "hydra:Class",
-      "subClassOf": null,
-      "label": "EntryPoint",
-      "description": "The main entry point or homepage of the API.",
-      "supportedOperation": [{
-        "@id": "_:entry_point",
-        "@type": "hydra:Operation",
-        "method": "GET",
-        "label": "The APIs main entry point.",
-        "description": null,
-        "expects": null,
-        "returns": "vocab:EntryPoint",
-        "statusCodes": []
-      }],
-      "supportedProperty": [{
-        "property": {
-          "@id": "vocab:EntryPoint/media",
-          "@type": "hydra:Link",
-          "label": "media",
-          "description": "The collection of all media",
-          "domain": "vocab:EntryPoint",
-          "range": "http://www.w3.org/ns/hydra/core#Collection",
-          "supportedOperation": [{
-              "@id": "_:media_create",
-              "@type": "hydra:Operation",
-              "method": "POST",
-              "label": "Creates a new Media entity",
-              "description": null,
-              "expects": "vocab:Media",
-              "returns": "vocab:Media",
-              "statusCodes": [{
-                "code": 201,
-                "description": "If the Media entity was created successfully."
-              }]
-            },
-            {
-              "@id": "_:media_collection_retrieve",
-              "@type": "hydra:Operation",
-              "method": "GET",
-              "label": "Retrieves all Media entities",
-              "description": null,
-              "expects": null,
-              "returns": "http://www.w3.org/ns/hydra/core#Collection",
-              "statusCodes": []
-            }
-          ]
-        },
-        "hydra:title": "media",
-        "hydra:description": "The collection of all media",
-        "required": null,
-        "readonly": true,
-        "writeonly": false
-      }]
-    },
-    {
       "@id": "vocab:Media",
       "@type": "hydra:Class",
       "subClassOf": null,
@@ -210,6 +154,62 @@
           "writeonly": false
         }
       ]
+    },
+    {
+      "@id": "vocab:EntryPoint",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "EntryPoint",
+      "description": "The main entry point or homepage of the API.",
+      "supportedOperation": [{
+        "@id": "_:entry_point",
+        "@type": "hydra:Operation",
+        "method": "GET",
+        "label": "The APIs main entry point.",
+        "description": null,
+        "expects": null,
+        "returns": "vocab:EntryPoint",
+        "statusCodes": []
+      }],
+      "supportedProperty": [{
+        "property": {
+          "@id": "vocab:EntryPoint/medias",
+          "@type": "hydra:Link",
+          "label": "medias",
+          "description": "The collection of all media",
+          "domain": "vocab:EntryPoint",
+          "range": "http://www.w3.org/ns/hydra/core#Collection",
+          "supportedOperation": [{
+              "@id": "_:media_create",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Creates a new Media entity",
+              "description": null,
+              "expects": "vocab:Media",
+              "returns": "vocab:Media",
+              "statusCodes": [{
+                "code": 201,
+                "description": "If the Media entity was created successfully."
+              }]
+            },
+            {
+              "@id": "_:media_collection_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves all Media entities",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": []
+            }
+          ]
+        },
+        "hydra:title": "media",
+        "hydra:description": "The collection of all media",
+        "required": null,
+        "readonly": true,
+        "writeonly": false
+      }]
     }
   ]
 }
