@@ -1,16 +1,26 @@
 [{
-  "id": 0,
+  "@context": "/api/v1/contexts/category",
+  "@id": "/api/v1/categories/0",
+  "@type": "Category",
   "name": "Hotel Facilities"
 }, {
-  "id": 1,
+  "@context": "/api/v1/contexts/category",
+  "@id": "/api/v1/categories/1",
+  "@type": "Category",
   "name": "Room Facilities"
 }, {
-  "id": 2,
+  "@context": "/api/v1/contexts/category",
+  "@id": "/api/v1/categories/2",
+  "@type": "Category",
   "name": "Accessibility"
 }, {
-  "id": 3,
+  "@context": "/api/v1/contexts/category",
+  "@id": "/api/v1/categories/3",
+  "@type": "Category",
   "name": "For Children"
 }, {
-  "id": 4,
+  "@context": "/api/v1/contexts/category",
+  "@id": "/api/v1/categories/4",
+  "@type": "Category",
   "name": "Activities"
 }]

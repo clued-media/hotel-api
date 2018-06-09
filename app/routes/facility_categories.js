@@ -3,7 +3,7 @@
 var router = require('../components/router');
 
 function Categories() {
-  var dbc = require('../components/db_client')('./data/facility_categories.json');
+  var dbc = require('../components/db_client')('facility_categories');
 
   return router(dbc);
 }

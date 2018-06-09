@@ -301,6 +301,44 @@
       }],
       "supportedProperty": [{
           "property": {
+            "@id": "vocab:EntryPoint/categories",
+            "@type": "hydra:Link",
+            "label": "facility_categories",
+            "description": "The collection of all categories",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:category_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Facility Category entity",
+                "description": null,
+                "expects": "vocab:Category",
+                "returns": "vocab:Category",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Facility Category entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:category_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Facility Category entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "facility_categories",
+          "hydra:description": "The collection of all facility categories",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
             "@id": "vocab:EntryPoint/locations",
             "@type": "hydra:Link",
             "label": "locations",

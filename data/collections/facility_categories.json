@@ -1,0 +1,21 @@
+{
+	"@context": "/api/v1/contexts/collection",
+	"@type": "Collection",
+	"@id": "/api/v1/categories",
+	"members": [{
+		"@id": "/api/v1/categories/0",
+		"@type": "vocab:Categories"
+	}, {
+		"@id": "/api/v1/categories/1",
+		"@type": "vocab:Categories"
+	}, {
+		"@id": "/api/v1/categories/2",
+		"@type": "vocab:Categories"
+	}, {
+		"@id": "/api/v1/categories/3",
+		"@type": "vocab:Categories"
+	}, {
+		"@id": "/api/v1/categories/4",
+		"@type": "vocab:Categories"
+	}]
+}
