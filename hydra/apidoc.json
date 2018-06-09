@@ -28,6 +28,69 @@
       }]
     },
     {
+      "@id": "vocab:Category",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Category",
+      "description": "Facility Category",
+      "supportedOperation": [{
+          "@id": "_:category_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Facility Category entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Category",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility Category entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:category_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Facility Category entity",
+          "description": null,
+          "expects": "vocab:Category",
+          "returns": "vocab:Category",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility Category entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:category_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Facility Category entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility Category entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+        "property": {
+          "@id": "vocab:Category/name",
+          "@type": "rdf:Property",
+          "label": "name",
+          "description": "The name of the Facility Category entity",
+          "domain": "vocab:Category",
+          "range": "http://www.w3.org/2001/XMLSchema#string",
+          "supportedOperation": []
+        },
+        "hydra:title": "name",
+        "hydra:description": "The country code of the Facility Category entity",
+        "required": null,
+        "readonly": false,
+        "writeonly": false
+      }]
+    },
+    {
       "@id": "vocab:Location",
       "@type": "hydra:Class",
       "subClassOf": null,
