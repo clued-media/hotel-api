@@ -40,7 +40,7 @@ app.get(config.namespace + '/contexts/:resource', (req, res, next) => {
 // app.use(config.namespace + '/hotels', require('./app/routes/hotels'));
 // app.use(config.namespace + '/rooms', require('./app/routes/rooms'));
 // app.use(config.namespace + '/bookings', require('./app/routes/bookings'));
-// app.use(config.namespace + '/reviews', require('./app/routes/reviews'));
+app.use(config.namespace + '/reviews', require('./app/routes/reviews'));
 app.use(config.namespace + '/facilities', require('./app/routes/facilities'));
 app.use(config.namespace + '/categories', require('./app/routes/facility_categories'));
 app.use(config.namespace + '/locations', require('./app/routes/locations'));

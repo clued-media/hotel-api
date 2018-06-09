@@ -3,7 +3,7 @@
 var router = require('../components/router');
 
 function Bookings() {
-  var dbc = require('../components/db_client')('./data/bookings.json');
+  var dbc = require('../components/db_client')('bookings');
   var bookings = router(dbc);
 
   bookings.get('/:id/rooms', (req, res, next) => {

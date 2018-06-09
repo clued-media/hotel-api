@@ -3,7 +3,7 @@
 var router = require('../components/router');
 
 function Reviews() {
-  var dbc = require('../components/db_client')('./data/reviews.json');
+  var dbc = require('../components/db_client')('reviews');
 
   return router(dbc);
 }
