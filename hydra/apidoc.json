@@ -364,6 +364,234 @@
       }],
       "supportedProperty": [{
           "property": {
+            "@id": "vocab:EntryPoint/users",
+            "@type": "hydra:Link",
+            "label": "users",
+            "description": "The collection of all users",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:user_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new User entity",
+                "description": null,
+                "expects": "vocab:User",
+                "returns": "vocab:User",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the User entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:user_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all User entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "users",
+          "hydra:description": "The collection of all users",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
+            "@id": "vocab:EntryPoint/hotels",
+            "@type": "hydra:Link",
+            "label": "hotels",
+            "description": "The collection of all hotels",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:hotel_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Hotel entity",
+                "description": null,
+                "expects": "vocab:Hotel",
+                "returns": "vocab:Hotel",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Hotel entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:hotel_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Hotel entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "hotels",
+          "hydra:description": "The collection of all hotels",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
+            "@id": "vocab:EntryPoint/rooms",
+            "@type": "hydra:Link",
+            "label": "rooms",
+            "description": "The collection of all hotel rooms",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:room_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Room entity",
+                "description": null,
+                "expects": "vocab:Room",
+                "returns": "vocab:Room",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Room entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:room_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Room entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "rooms",
+          "hydra:description": "The collection of all hotel rooms",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
+            "@id": "vocab:EntryPoint/bookings",
+            "@type": "hydra:Link",
+            "label": "bookings",
+            "description": "The collection of all bookings",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:booking_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Booking entity",
+                "description": null,
+                "expects": "vocab:Booking",
+                "returns": "vocab:Booking",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Booking entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:booking_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Booking entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "bookings",
+          "hydra:description": "The collection of all bookings",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
+            "@id": "vocab:EntryPoint/reviews",
+            "@type": "hydra:Link",
+            "label": "reviews",
+            "description": "The collection of all reviews",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:review_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Review entity",
+                "description": null,
+                "expects": "vocab:Review",
+                "returns": "vocab:Review",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Review entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:review_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Review entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "reviews",
+          "hydra:description": "The collection of all reviews",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
+            "@id": "vocab:EntryPoint/facilities",
+            "@type": "hydra:Link",
+            "label": "facilities",
+            "description": "The collection of all facilities",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:facility_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Facility entity",
+                "description": null,
+                "expects": "vocab:Facility",
+                "returns": "vocab:Facility",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Facility entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:facility_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Facility entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "facilities",
+          "hydra:description": "The collection of all facilities",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }, {
+          "property": {
             "@id": "vocab:EntryPoint/categories",
             "@type": "hydra:Link",
             "label": "categories",

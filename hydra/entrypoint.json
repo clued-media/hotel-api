@@ -2,6 +2,12 @@
   "@context": "/api/v1/contexts/entryPoint",
   "@id": "/api/v1",
   "@type": "EntryPoint",
+  "users": "/api/v1/users",
+  "hotels": "/api/v1/hotels",
+  "rooms": "/api/v1/rooms",
+  "bookings": "/api/v1/bookings",
+  "reviews": "/api/v1/reviews",
+  "facilities": "/api/v1/facilities",
   "categories": "/api/v1/categories",
   "locations": "/api/v1/locations",
   "media": "/api/v1/media"
