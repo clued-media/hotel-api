@@ -28,39 +28,39 @@
       }]
     },
     {
-      "@id": "vocab:FacilityCategory",
+      "@id": "vocab:Category",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "FacilityCategory",
+      "label": "Facility Category",
       "description": "Facility Category",
       "supportedOperation": [{
-          "@id": "_:facility_category_retrieve",
+          "@id": "_:category_retrieve",
           "@type": "hydra:Operation",
           "method": "GET",
           "label": "Retrieves a Facility Category entity",
           "description": null,
           "expects": null,
-          "returns": "vocab:FacilityCategory",
+          "returns": "vocab:Category",
           "statusCodes": [{
             "code": 404,
             "description": "If the Facility Category entity wasn't found."
           }]
         },
         {
-          "@id": "_:facility_category_replace",
+          "@id": "_:category_replace",
           "@type": "hydra:Operation",
           "method": "PUT",
           "label": "Replaces an existing Facility Category entity",
           "description": null,
-          "expects": "vocab:FacilityCategory",
-          "returns": "vocab:FacilityCategory",
+          "expects": "vocab:Category",
+          "returns": "vocab:Category",
           "statusCodes": [{
             "code": 404,
             "description": "If the Facility Category entity wasn't found."
           }]
         },
         {
-          "@id": "_:facility_category_delete",
+          "@id": "_:category_delete",
           "@type": "hydra:Operation",
           "method": "DELETE",
           "label": "Deletes a Facility Category entity",
@@ -75,11 +75,11 @@
       ],
       "supportedProperty": [{
         "property": {
-          "@id": "vocab:FacilityCategory/name",
+          "@id": "vocab:Category/name",
           "@type": "rdf:Property",
           "label": "name",
           "description": "The name of the Facility Category entity",
-          "domain": "vocab:FacilityCategory",
+          "domain": "vocab:Category",
           "range": "http://www.w3.org/2001/XMLSchema#string",
           "supportedOperation": []
         },
@@ -364,27 +364,27 @@
       }],
       "supportedProperty": [{
           "property": {
-            "@id": "vocab:EntryPoint/facilityCategories",
+            "@id": "vocab:EntryPoint/categories",
             "@type": "hydra:Link",
-            "label": "facility_categories",
+            "label": "categories",
             "description": "The collection of all facility categories",
             "domain": "vocab:EntryPoint",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
             "supportedOperation": [{
-                "@id": "_:facility_category_create",
+                "@id": "_:category_create",
                 "@type": "hydra:Operation",
                 "method": "POST",
                 "label": "Creates a new Facility Category entity",
                 "description": null,
-                "expects": "vocab:FacilityCategory",
-                "returns": "vocab:FacilityCategory",
+                "expects": "vocab:Category",
+                "returns": "vocab:Category",
                 "statusCodes": [{
                   "code": 201,
                   "description": "If the Facility Category entity was created successfully."
                 }]
               },
               {
-                "@id": "_:facility_category_collection_retrieve",
+                "@id": "_:category_collection_retrieve",
                 "@type": "hydra:Operation",
                 "method": "GET",
                 "label": "Retrieves all Facility Category entities",
@@ -395,7 +395,7 @@
               }
             ]
           },
-          "hydra:title": "facility_categories",
+          "hydra:title": "categories",
           "hydra:description": "The collection of all facility categories",
           "required": null,
           "readonly": true,
