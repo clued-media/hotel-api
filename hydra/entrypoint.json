@@ -2,5 +2,6 @@
   "@context": "/api/v1/contexts/entryPoint",
   "@id": "/api/v1",
   "@type": "EntryPoint",
+  "locations": "/api/v1/locations",
   "media": "/api/v1/media"
 }

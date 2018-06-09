@@ -3,6 +3,10 @@
     "hydra": "http://www.w3.org/ns/hydra/core#",
     "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
     "EntryPoint": "vocab:EntryPoint",
+    "locations": {
+      "@id": "vocab:EntryPoint/locations",
+      "@type": "@id"
+    },
     "media": {
       "@id": "vocab:EntryPoint/media",
       "@type": "@id"

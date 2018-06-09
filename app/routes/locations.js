@@ -3,7 +3,7 @@
 var router = require('../components/router');
 
 function Locations() {
-  var dbc = require('../components/db_client')('./data/locations.json');
+  var dbc = require('../components/db_client')('locations');
 
   return router(dbc);
 }

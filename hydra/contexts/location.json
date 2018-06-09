@@ -1,0 +1,12 @@
+{
+    "@context": {
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
+        "Location": "vocab:Location",
+        "longitude": "vocab:Location/longitude",
+        "latitude": "vocab:Location/latitude",
+        "city": "vocab:Location/city",
+        "country": "vocab:Location/country",
+        "country_code": "vocab:Location/countryCode"
+    }
+}

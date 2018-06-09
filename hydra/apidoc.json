@@ -28,6 +28,134 @@
       }]
     },
     {
+      "@id": "vocab:Location",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Location",
+      "description": "Location",
+      "supportedOperation": [{
+          "@id": "_:location_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Location entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Location",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Location entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:location_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Location entity",
+          "description": null,
+          "expects": "vocab:Location",
+          "returns": "vocab:Location",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Location entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:location_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Location entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Location entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Location/longitude",
+            "@type": "rdf:Property",
+            "label": "longitude",
+            "description": "The longitude of the Location entity",
+            "domain": "vocab:Location",
+            "range": "http://www.w3.org/2001/XMLSchema#float",
+            "supportedOperation": []
+          },
+          "hydra:title": "longitude",
+          "hydra:description": "The longitude of the Location entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Location/latitude",
+            "@type": "rdf:Property",
+            "label": "latitude",
+            "description": "The latitude of the Location entity",
+            "domain": "vocab:Location",
+            "range": "http://www.w3.org/2001/XMLSchema#float",
+            "supportedOperation": []
+          },
+          "hydra:title": "latitude",
+          "hydra:description": "The latitude of the Location entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Location/city",
+            "@type": "rdf:Property",
+            "label": "city",
+            "description": "The city of the Location entity",
+            "domain": "vocab:Location",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "city",
+          "hydra:description": "The city of the Location entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Location/country",
+            "@type": "rdf:Property",
+            "label": "country",
+            "description": "The country of the Location entity",
+            "domain": "vocab:Location",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "country",
+          "hydra:description": "The country of the Location entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Location/countryCode",
+            "@type": "rdf:Property",
+            "label": "country_code",
+            "description": "The country code of the Location entity",
+            "domain": "vocab:Location",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "country_code",
+          "hydra:description": "The country code of the Location entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Media",
       "@type": "hydra:Class",
       "subClassOf": null,
@@ -172,44 +300,84 @@
         "statusCodes": []
       }],
       "supportedProperty": [{
-        "property": {
-          "@id": "vocab:EntryPoint/media",
-          "@type": "hydra:Link",
-          "label": "media",
-          "description": "The collection of all media",
-          "domain": "vocab:EntryPoint",
-          "range": "http://www.w3.org/ns/hydra/core#Collection",
-          "supportedOperation": [{
-              "@id": "_:media_create",
-              "@type": "hydra:Operation",
-              "method": "POST",
-              "label": "Creates a new Media entity",
-              "description": null,
-              "expects": "vocab:Media",
-              "returns": "vocab:Media",
-              "statusCodes": [{
-                "code": 201,
-                "description": "If the Media entity was created successfully."
-              }]
-            },
-            {
-              "@id": "_:media_collection_retrieve",
-              "@type": "hydra:Operation",
-              "method": "GET",
-              "label": "Retrieves all Media entities",
-              "description": null,
-              "expects": null,
-              "returns": "http://www.w3.org/ns/hydra/core#Collection",
-              "statusCodes": []
-            }
-          ]
+          "property": {
+            "@id": "vocab:EntryPoint/locations",
+            "@type": "hydra:Link",
+            "label": "locations",
+            "description": "The collection of all locations",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:location_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Location entity",
+                "description": null,
+                "expects": "vocab:Location",
+                "returns": "vocab:Location",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Location entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:location_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Location entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "locations",
+          "hydra:description": "The collection of all locations",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
         },
-        "hydra:title": "media",
-        "hydra:description": "The collection of all media",
-        "required": null,
-        "readonly": true,
-        "writeonly": false
-      }]
+        {
+          "property": {
+            "@id": "vocab:EntryPoint/media",
+            "@type": "hydra:Link",
+            "label": "media",
+            "description": "The collection of all media",
+            "domain": "vocab:EntryPoint",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+                "@id": "_:media_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Media entity",
+                "description": null,
+                "expects": "vocab:Media",
+                "returns": "vocab:Media",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Media entity was created successfully."
+                }]
+              },
+              {
+                "@id": "_:media_collection_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves all Media entities",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": []
+              }
+            ]
+          },
+          "hydra:title": "media",
+          "hydra:description": "The collection of all media",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
     }
   ]
 }
