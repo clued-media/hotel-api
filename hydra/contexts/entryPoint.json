@@ -4,15 +4,15 @@
     "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
     "EntryPoint": "vocab:EntryPoint",
     "categories": {
-      "@id": "EntryPoint/categories",
+      "@id": "vocab:EntryPoint/categories",
       "@type": "@id"
     },
     "locations": {
-      "@id": "EntryPoint/locations",
+      "@id": "vocab:EntryPoint/locations",
       "@type": "@id"
     },
     "media": {
-      "@id": "EntryPoint/media",
+      "@id": "vocab:EntryPoint/media",
       "@type": "@id"
     }
   }
