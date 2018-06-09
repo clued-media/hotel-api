@@ -366,7 +366,7 @@
           "property": {
             "@id": "vocab:EntryPoint/categories",
             "@type": "hydra:Link",
-            "label": "facility_categories",
+            "label": "categories",
             "description": "The collection of all facility categories",
             "domain": "vocab:EntryPoint",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
@@ -395,7 +395,7 @@
               }
             ]
           },
-          "hydra:title": "facility_categories",
+          "hydra:title": "categories",
           "hydra:description": "The collection of all facility categories",
           "required": null,
           "readonly": true,

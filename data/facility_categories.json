@@ -1,25 +1,25 @@
 [{
-  "@context": "/api/v1/contexts/category",
+  "@context": "/api/v1/contexts/facility_category",
   "@id": "/api/v1/categories/0",
   "@type": "Category",
   "name": "Hotel Facilities"
 }, {
-  "@context": "/api/v1/contexts/category",
+  "@context": "/api/v1/contexts/facility_category",
   "@id": "/api/v1/categories/1",
   "@type": "Category",
   "name": "Room Facilities"
 }, {
-  "@context": "/api/v1/contexts/category",
+  "@context": "/api/v1/contexts/facility_category",
   "@id": "/api/v1/categories/2",
   "@type": "Category",
   "name": "Accessibility"
 }, {
-  "@context": "/api/v1/contexts/category",
+  "@context": "/api/v1/contexts/facility_category",
   "@id": "/api/v1/categories/3",
   "@type": "Category",
   "name": "For Children"
 }, {
-  "@context": "/api/v1/contexts/category",
+  "@context": "/api/v1/contexts/facility_category",
   "@id": "/api/v1/categories/4",
   "@type": "Category",
   "name": "Activities"
