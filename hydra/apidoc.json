@@ -162,7 +162,7 @@
             "domain": "vocab:User",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
             "supportedOperation": [{
-              "@id": "_:user_reviews_retrieve",
+              "@id": "_:user_bookings_retrieve",
               "@type": "hydra:Operation",
               "method": "GET",
               "label": "Retrieves the bookings of the User entity",
