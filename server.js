@@ -5,8 +5,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   config = require('./config.json');
 
-var apidoc = require('./hydra/apidoc.json'),
-  entrypoint = require('./hydra/entrypoint.json');
+var apidoc = require('./data/hydra/apidoc.json'),
+  entrypoint = require('./data/hydra/entrypoint.json');
 
 // Init middlewares.
 app.use(bodyParser.urlencoded({
@@ -32,7 +32,7 @@ app.get(config.ns + '/vocab', (req, res, next) => {
 });
 
 app.get(config.ns + '/contexts/:resource', (req, res, next) => {
-  res.send(require('./hydra/contexts/' + req.params.resource + '.json'));
+  res.send(require('./data/hydra/contexts/' + req.params.resource + '.json'));
   next();
 });
 

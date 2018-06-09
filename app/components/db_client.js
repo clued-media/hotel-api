@@ -51,7 +51,6 @@ module.exports = (dbName) => {
     }
 
     db[id] = {};
-    // collection.members[id] = {};
 
     return _updateDB();
   };
