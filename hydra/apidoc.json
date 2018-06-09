@@ -28,6 +28,190 @@
       }]
     },
     {
+      "@id": "vocab:User",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "User",
+      "description": "A user registered in the system",
+      "supportedOperation": [{
+          "@id": "_:user_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a User entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:User",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the User entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:user_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing User entity",
+          "description": null,
+          "expects": "vocab:User",
+          "returns": "vocab:User",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the User entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:user_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a User entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the User entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:User/firstName",
+            "@type": "rdf:Property",
+            "label": "first_name",
+            "description": "The user's first name",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "first_name",
+          "hydra:description": "The user's first name",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/lastName",
+            "@type": "rdf:Property",
+            "label": "last_name",
+            "description": "The user's last name",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "last_name",
+          "hydra:description": "The user's last name",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/username",
+            "@type": "rdf:Property",
+            "label": "username",
+            "description": "The user's username",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "username",
+          "hydra:description": "The user's username",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/email",
+            "@type": "rdf:Property",
+            "label": "email",
+            "description": "The user's email address",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "email",
+          "hydra:description": "The user's email address",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/password",
+            "@type": "rdf:Property",
+            "label": "password",
+            "description": "The user's password",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "password",
+          "hydra:description": "The user's password",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/bookings",
+            "@type": "hydra:Link",
+            "label": "bookings",
+            "description": "The collection of bookings of the User entity",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:user_reviews_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the bookings of the User entity",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the User entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "bookings",
+          "hydra:description": "The collection of bookings of the User entity",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:User/reviews",
+            "@type": "hydra:Link",
+            "label": "reviews",
+            "description": "The collection of reviews of the User entity",
+            "domain": "vocab:User",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:user_reviews_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the reviews of the User entity",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the User entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "reviews",
+          "hydra:description": "The collection of reviews of the User entity",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Booking",
       "@type": "hydra:Class",
       "subClassOf": null,
