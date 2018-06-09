@@ -44,7 +44,7 @@ app.use(config.ns + '/hotels', require('./app/routes/hotels'));
 // app.use(config.ns + '/facilities', require('./app/routes/facilities'));
 app.use(config.ns + '/categories', require('./app/routes/categories'));
 // app.use(config.ns + '/locations', require('./app/routes/locations'));
-// app.use(config.ns + '/media', require('./app/routes/media'));
+app.use(config.ns + '/media', require('./app/routes/media'));
 
 // enable logging requests
 app.use(logger('dev'));
