@@ -28,6 +28,175 @@
       }]
     },
     {
+      "@id": "vocab:Room",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Room",
+      "description": "Room",
+      "supportedOperation": [{
+          "@id": "_:room_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Room entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Room",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Room entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:room_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Room entity",
+          "description": null,
+          "expects": "vocab:Room",
+          "returns": "vocab:Room",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Room entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:room_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Room entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Room entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Room/roomNo",
+            "@type": "rdf:Property",
+            "label": "room_no",
+            "description": "The room number of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#int",
+            "supportedOperation": []
+          },
+          "hydra:title": "room_no",
+          "hydra:description": "The room number of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/description",
+            "@type": "rdf:Property",
+            "label": "description",
+            "description": "The description of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "description",
+          "hydra:description": "The description of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/category",
+            "@type": "rdf:Property",
+            "label": "category",
+            "description": "The category of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "category",
+          "hydra:description": "The category of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/size",
+            "@type": "rdf:Property",
+            "label": "size",
+            "description": "The size of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#int",
+            "supportedOperation": []
+          },
+          "hydra:title": "size",
+          "hydra:description": "The size of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/capacity",
+            "@type": "rdf:Property",
+            "label": "capacity",
+            "description": "The capacity of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#int",
+            "supportedOperation": []
+          },
+          "hydra:title": "capacity",
+          "hydra:description": "The capacity of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/price",
+            "@type": "rdf:Property",
+            "label": "price",
+            "description": "The price of the Room entity",
+            "domain": "vocab:Room",
+            "range": "http://www.w3.org/2001/XMLSchema#float",
+            "supportedOperation": []
+          },
+          "hydra:title": "price",
+          "hydra:description": "The price of the Room entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Room/hotel",
+            "@type": "hydra:Link",
+            "label": "hotel",
+            "description": "The hotel the rooms belongs to",
+            "domain": "vocab:Room",
+            "range": "vocab:Hotel",
+            "supportedOperation": [{
+              "@id": "_:hotel_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a Hotel entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:Hotel",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "hotel",
+          "hydra:description": "The hotel the rooms belongs to",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Review",
       "@type": "hydra:Class",
       "subClassOf": null,

@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
+        "Room": "vocab:Room",
+        "room_no": "vocab:Room/roomNo",
+        "description": "vocab:Room/description",
+        "category": "vocab:Room/category",
+        "size": "vocab:Room/size",
+        "capacity": "vocab:Room/capacity",
+        "price": "vocab:Room/price",
+        "hotel": {
+            "@id": "vocab:Room/hotel",
+            "@type": "@id"
+        }
+    }
+}
