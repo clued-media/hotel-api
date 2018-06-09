@@ -28,6 +28,187 @@
       }]
     },
     {
+      "@id": "vocab:Booking",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Booking",
+      "description": "A hotel booking",
+      "supportedOperation": [{
+          "@id": "_:booking_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Booking entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Booking",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Booking entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:booking_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Booking entity",
+          "description": null,
+          "expects": "vocab:Booking",
+          "returns": "vocab:Booking",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Booking entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:booking_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Booking entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Booking entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Booking/date",
+            "@type": "rdf:Property",
+            "label": "date",
+            "description": "The date the booking was placed",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "supportedOperation": []
+          },
+          "hydra:title": "date",
+          "hydra:description": "The date the booking was placed",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/arrivalDate",
+            "@type": "rdf:Property",
+            "label": "arrival_date",
+            "description": "The date the user will arrive",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "supportedOperation": []
+          },
+          "hydra:title": "arrival_date",
+          "hydra:description": "The date the user will arrive",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/departureDate",
+            "@type": "rdf:Property",
+            "label": "departure_date",
+            "description": "The date the user will departure",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "supportedOperation": []
+          },
+          "hydra:title": "arrival_date",
+          "hydra:description": "The date the user will departure",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/paymentMethod",
+            "@type": "rdf:Property",
+            "label": "payment_method",
+            "description": "The payment method the user chose for the booking",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "payment_method",
+          "hydra:description": "The payment method the user chose for the booking",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/amount",
+            "@type": "rdf:Property",
+            "label": "amount",
+            "description": "The amount the user has/had to pay for the booking",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "amount",
+          "hydra:description": "The amount the user has/had to pay for the booking",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/user",
+            "@type": "hydra:Link",
+            "label": "user",
+            "description": "The user who created the Booking entity",
+            "domain": "vocab:Booking",
+            "range": "vocab:User",
+            "supportedOperation": [{
+              "@id": "_:user_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a User entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:User",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "user",
+          "hydra:description": "The user who created the Booking entity",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Booking/rooms",
+            "@type": "hydra:Link",
+            "label": "rooms",
+            "description": "The collection of rooms included in the Booking entity",
+            "domain": "vocab:Booking",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:booking_rooms_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the rooms included in the booking",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Booking entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "rooms",
+          "hydra:description": "The collection of rooms included in the Booking entity",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Hotel",
       "@type": "hydra:Class",
       "subClassOf": null,
