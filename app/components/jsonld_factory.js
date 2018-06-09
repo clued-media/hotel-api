@@ -23,6 +23,8 @@ function JsonLdFactory() {
         '@type': 'vocab:' + type
       });
     });
+
+    return json;
   };
 
   return {

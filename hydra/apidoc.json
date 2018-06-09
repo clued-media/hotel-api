@@ -31,8 +31,8 @@
       "@id": "vocab:Hotel",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "A hotel",
-      "description": "The Hotel entity",
+      "label": "Hotel",
+      "description": "A hotel",
       "supportedOperation": [{
           "@id": "_:hotel_retrieve",
           "@type": "hydra:Operation",
@@ -288,8 +288,8 @@
       "@id": "vocab:Room",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "A hotel room",
-      "description": "Room",
+      "label": "Room",
+      "description": "A hotel room",
       "supportedOperation": [{
           "@id": "_:room_retrieve",
           "@type": "hydra:Operation",
