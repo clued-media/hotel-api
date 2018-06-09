@@ -28,39 +28,39 @@
       }]
     },
     {
-      "@id": "vocab:Category",
+      "@id": "vocab:FacilityCategory",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "Category",
+      "label": "FacilityCategory",
       "description": "Facility Category",
       "supportedOperation": [{
-          "@id": "_:category_retrieve",
+          "@id": "_:facility_category_retrieve",
           "@type": "hydra:Operation",
           "method": "GET",
           "label": "Retrieves a Facility Category entity",
           "description": null,
           "expects": null,
-          "returns": "vocab:Category",
+          "returns": "vocab:FacilityCategory",
           "statusCodes": [{
             "code": 404,
             "description": "If the Facility Category entity wasn't found."
           }]
         },
         {
-          "@id": "_:category_replace",
+          "@id": "_:facility_category_replace",
           "@type": "hydra:Operation",
           "method": "PUT",
           "label": "Replaces an existing Facility Category entity",
           "description": null,
-          "expects": "vocab:Category",
-          "returns": "vocab:Category",
+          "expects": "vocab:FacilityCategory",
+          "returns": "vocab:FacilityCategory",
           "statusCodes": [{
             "code": 404,
             "description": "If the Facility Category entity wasn't found."
           }]
         },
         {
-          "@id": "_:category_delete",
+          "@id": "_:facility_category_delete",
           "@type": "hydra:Operation",
           "method": "DELETE",
           "label": "Deletes a Facility Category entity",
@@ -75,16 +75,16 @@
       ],
       "supportedProperty": [{
         "property": {
-          "@id": "vocab:Category/name",
+          "@id": "vocab:FacilityCategory/name",
           "@type": "rdf:Property",
           "label": "name",
           "description": "The name of the Facility Category entity",
-          "domain": "vocab:Category",
+          "domain": "vocab:FacilityCategory",
           "range": "http://www.w3.org/2001/XMLSchema#string",
           "supportedOperation": []
         },
         "hydra:title": "name",
-        "hydra:description": "The country code of the Facility Category entity",
+        "hydra:description": "The name of the Facility Category entity",
         "required": null,
         "readonly": false,
         "writeonly": false
@@ -364,27 +364,27 @@
       }],
       "supportedProperty": [{
           "property": {
-            "@id": "vocab:EntryPoint/categories",
+            "@id": "vocab:EntryPoint/facilityCategories",
             "@type": "hydra:Link",
-            "label": "categories",
+            "label": "facility_categories",
             "description": "The collection of all facility categories",
             "domain": "vocab:EntryPoint",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
             "supportedOperation": [{
-                "@id": "_:category_create",
+                "@id": "_:facility_category_create",
                 "@type": "hydra:Operation",
                 "method": "POST",
                 "label": "Creates a new Facility Category entity",
                 "description": null,
-                "expects": "vocab:Category",
-                "returns": "vocab:Category",
+                "expects": "vocab:FacilityCategory",
+                "returns": "vocab:FacilityCategory",
                 "statusCodes": [{
                   "code": 201,
                   "description": "If the Facility Category entity was created successfully."
                 }]
               },
               {
-                "@id": "_:category_collection_retrieve",
+                "@id": "_:facility_category_collection_retrieve",
                 "@type": "hydra:Operation",
                 "method": "GET",
                 "label": "Retrieves all Facility Category entities",
@@ -395,7 +395,7 @@
               }
             ]
           },
-          "hydra:title": "categories",
+          "hydra:title": "facility_categories",
           "hydra:description": "The collection of all facility categories",
           "required": null,
           "readonly": true,
