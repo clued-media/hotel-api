@@ -40,8 +40,8 @@ app.get(config.ns + '/contexts/:resource', (req, res, next) => {
 app.use(config.ns + '/hotels', require('./app/routes/hotels'));
 // app.use(config.ns + '/rooms', require('./app/routes/rooms'));
 // app.use(config.ns + '/bookings', require('./app/routes/bookings'));
-// app.use(config.ns + '/reviews', require('./app/routes/reviews'));
-// app.use(config.ns + '/facilities', require('./app/routes/facilities'));
+app.use(config.ns + '/reviews', require('./app/routes/reviews'));
+app.use(config.ns + '/facilities', require('./app/routes/facilities'));
 app.use(config.ns + '/categories', require('./app/routes/categories'));
 app.use(config.ns + '/locations', require('./app/routes/locations'));
 app.use(config.ns + '/media', require('./app/routes/media'));

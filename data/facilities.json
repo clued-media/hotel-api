@@ -1,291 +1,233 @@
 [{
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/0",
+  "id": "/api/v1/facilities/0",
   "name": "24-Hour Room Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/1",
+  "id": "/api/v1/facilities/1",
   "name": "24-Hour Front Desk",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/2",
+  "id": "/api/v1/facilities/2",
   "name": "Airport Shuttle",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/3",
+  "id": "/api/v1/facilities/3",
   "name": "Bell Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/4",
+  "id": "/api/v1/facilities/4",
   "name": "Business Center",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/5",
+  "id": "/api/v1/facilities/5",
   "name": "Concierge Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/6",
+  "id": "/api/v1/facilities/6",
   "name": "Conference Rooms",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/7",
+  "id": "/api/v1/facilities/7",
   "name": "Elevator",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/8",
+  "id": "/api/v1/facilities/8",
   "name": "Express Check-in/out Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/9",
+  "id": "/api/v1/facilities/9",
   "name": "Free WiFi in Lobby",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/10",
+  "id": "/api/v1/facilities/10",
   "name": "Baggage Storage",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/11",
+  "id": "/api/v1/facilities/11",
   "name": "Hotel Bar",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/12",
+  "id": "/api/v1/facilities/12",
   "name": "Hotel Safe",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/13",
+  "id": "/api/v1/facilities/13",
   "name": "Laundry Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/14",
+  "id": "/api/v1/facilities/14",
   "name": "Non-smoking Rooms",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/15",
+  "id": "/api/v1/facilities/15",
   "name": "Parking Lot",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/16",
+  "id": "/api/v1/facilities/16",
   "name": "Pets Allowed",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/17",
+  "id": "/api/v1/facilities/17",
   "name": "Restaurant",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/18",
+  "id": "/api/v1/facilities/18",
   "name": "Room Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/19",
+  "id": "/api/v1/facilities/19",
   "name": "WiFi in Lobby",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/20",
+  "id": "/api/v1/facilities/20",
   "name": "Wake-up Service",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/21",
+  "id": "/api/v1/facilities/21",
   "name": "Tour Desk",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/22",
+  "id": "/api/v1/facilities/22",
   "name": "Air Conditioning",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/23",
+  "id": "/api/v1/facilities/23",
   "name": "Bathroom with Bathtub",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/24",
+  "id": "/api/v1/facilities/24",
   "name": "Bathroom with Shower",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/25",
+  "id": "/api/v1/facilities/25",
   "name": "Cable TV",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/26",
+  "id": "/api/v1/facilities/26",
   "name": "Central Heating",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/27",
+  "id": "/api/v1/facilities/27",
   "name": "Cosmetic Mirror",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/28",
+  "id": "/api/v1/facilities/28",
   "name": "Desk",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/29",
+  "id": "/api/v1/facilities/29",
   "name": "Free WiFi in Rooms",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/30",
+  "id": "/api/v1/facilities/30",
   "name": "Hairdryer",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/31",
+  "id": "/api/v1/facilities/31",
   "name": "Internet",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/32",
+  "id": "/api/v1/facilities/32",
   "name": "Room Safe",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/33",
+  "id": "/api/v1/facilities/33",
   "name": "Satellite TV",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/34",
+  "id": "/api/v1/facilities/34",
   "name": "Telephone",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/35",
+  "id": "/api/v1/facilities/35",
   "name": "Television",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/36",
+  "id": "/api/v1/facilities/36",
   "name": "WiFi in Rooms",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/37",
+  "id": "/api/v1/facilities/37",
   "name": "Minibar",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/38",
+  "id": "/api/v1/facilities/38",
   "name": "Wardrobe / Closet",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/39",
+  "id": "/api/v1/facilities/39",
   "name": "Toilet",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/40",
+  "id": "/api/v1/facilities/40",
   "name": "Terrace",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/41",
+  "id": "/api/v1/facilities/41",
   "name": "Doctor On-site",
   "category": "/api/v1/categories/0"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/42",
+  "id": "/api/v1/facilities/42",
   "name": "Kitchen / Kitchenette",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/43",
+  "id": "/api/v1/facilities/43",
   "name": "Microwave",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/44",
+  "id": "/api/v1/facilities/44",
   "name": "Refrigerator",
   "category": "/api/v1/categories/1"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/45",
+  "id": "/api/v1/facilities/45",
   "name": "Wheelchair accessible",
   "category": "/api/v1/categories/2"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/46",
+  "id": "/api/v1/facilities/46",
   "name": "Child / Baby Crib",
   "category": "/api/v1/categories/3"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/47",
+  "id": "/api/v1/facilities/47",
   "name": "Childcare / Babysitting",
   "category": "/api/v1/categories/3"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/48",
+  "id": "/api/v1/facilities/48",
   "name": "Pool",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/49",
+  "id": "/api/v1/facilities/49",
   "name": "Fitness Center / Gym",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/50",
+  "id": "/api/v1/facilities/50",
   "name": "Solarium",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/51",
+  "id": "/api/v1/facilities/51",
   "name": "Wellness / Spa",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/52",
+  "id": "/api/v1/facilities/52",
   "name": "Sauna",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/53",
+  "id": "/api/v1/facilities/53",
   "name": "Steam Room",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/54",
+  "id": "/api/v1/facilities/54",
   "name": "Whirlpool / Jacuzzi",
   "category": "/api/v1/categories/4"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/55",
+  "id": "/api/v1/facilities/55",
   "name": "Accessible Paths / Hallways",
   "category": "/api/v1/categories/2"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/56",
+  "id": "/api/v1/facilities/56",
   "name": "Accessible Parking",
   "category": "/api/v1/categories/2"
 }, {
-  "@context": "/api/v1/contexts/facility",
-  "@id": "/api/v1/facilities/57",
+  "id": "/api/v1/facilities/57",
   "name": "Deaf Accessibility Equipment",
   "category": "/api/v1/categories/2"
 }]
