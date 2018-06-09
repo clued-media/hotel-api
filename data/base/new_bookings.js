@@ -1,28 +1,29 @@
 var w = require('../utility/write');
 var utils = require('../utility/utils');
+var config = require('../../config');
 
 var users = require('../users.json');
 var rooms = require('../rooms.json');
 
-module.exports = function() {
+module.exports = function () {
   var pmts = ['paypal', 'credit', 'debit', 'cash']
   var bookings = [];
 
   for (var i = 0; i < 1000; i++) {
-    var booking_date = utils.getDate();
-    var arrival_date = utils.getDate(booking_date);
+    var bookingDate = utils.getDate();
+    var arrivalDate = utils.getDate(bookingDate);
 
     bookings.push({
-      id: i,
-      date: booking_date,
-      arrival_date: arrival_date,
-      departure_date: utils.getDate(arrival_date),
+      id: config.ns + '/bookings/' + i,
+      date: bookingDate,
+      arrival_date: arrivalDate,
+      departure_date: utils.getDate(arrivalDate),
       payment_method: pmts[Math.floor(Math.random() * pmts.length)],
       amount: parseFloat((Math.random() * 500 + 20).toFixed(2)),
-      user: utils.config.api + '/users/' + Math.floor(Math.random() * users.length),
-      rooms: utils.fillArray(1, 5, rooms.length, 'rooms'),
+      user: config.ns + '/users/' + Math.floor(Math.random() * users.length),
+      rooms: utils.fillArray(1, 5, rooms.length, 'rooms')
     });
   }
 
-  w("./bookings.json", JSON.stringify(bookings));
+  w('bookings', JSON.stringify(bookings));
 }
