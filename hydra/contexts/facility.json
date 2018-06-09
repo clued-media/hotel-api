@@ -1,0 +1,12 @@
+{
+    "@context": {
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
+        "Facility": "vocab:Facility",
+        "name": "vocab:Facility/name",
+        "category": {
+            "@id": "vocab:Facility/category",
+            "@type": "@id"
+        }
+    }
+}

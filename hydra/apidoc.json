@@ -28,6 +28,95 @@
       }]
     },
     {
+      "@id": "vocab:Facility",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Facility",
+      "description": "Facility",
+      "supportedOperation": [{
+          "@id": "_:facility_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Facility entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Facility",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:facility_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Facility entity",
+          "description": null,
+          "expects": "vocab:Facility",
+          "returns": "vocab:Facility",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:facility_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Facility entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Facility entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Facility/name",
+            "@type": "rdf:Property",
+            "label": "name",
+            "description": "The name of the Facility entity",
+            "domain": "vocab:Facility",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "name",
+          "hydra:description": "The name of the Facility entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Facility/category",
+            "@type": "hydra:Link",
+            "label": "category",
+            "description": "The category the facility belongs to",
+            "domain": "vocab:Facility",
+            "range": "vocab:Category",
+            "supportedOperation": [{
+              "@id": "_:category_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a Facility Category entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:Category",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "category",
+          "hydra:description": "The category the facility belongs to",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Category",
       "@type": "hydra:Class",
       "subClassOf": null,

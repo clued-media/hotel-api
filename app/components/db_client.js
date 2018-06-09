@@ -3,7 +3,7 @@
 var fs = require('fs');
 var path = require('path');
 
-module.exports = dbName => {
+module.exports = (dbName) => {
   var dbPath = path.resolve('./data/' + dbName + '.json');
   var collection = require(path.resolve('./data/collections/' + dbName + '.json'));
   var db = require(dbPath);
@@ -29,10 +29,13 @@ module.exports = dbName => {
   };
 
   var create = function (entity) {
-    entity['id'] = db.length;
-    db.push(entity);
+    // entity['id'] = db.length;
+    // db.push(entity);
 
-    return _updateDB();
+    // return _updateDB();
+
+    // TODO Update JSON-LD files of collection and DB correctly.
+    return false;
   };
 
   var update = function (entity) {
@@ -51,6 +54,7 @@ module.exports = dbName => {
     }
 
     db[id] = {};
+    collection.members[id] = {};
 
     return _updateDB();
   };
