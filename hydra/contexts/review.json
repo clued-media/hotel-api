@@ -3,7 +3,10 @@
         "hydra": "http://www.w3.org/ns/hydra/core#",
         "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
         "Review": "vocab:Review",
-        "date": "vocab:Review/date",
+        "date": {
+            "@id": "vocab:Review/date",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
         "rating": "vocab:Review/rating",
         "comment": "vocab:Review/comment",
         "user": {
