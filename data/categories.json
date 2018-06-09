@@ -1,0 +1,16 @@
+[{
+  "id": "/api/v1/categories/0",
+  "name": "Hotel Facilities"
+}, {
+  "id": "/api/v1/categories/1",
+  "name": "Room Facilities"
+}, {
+  "id": "/api/v1/categories/2",
+  "name": "Accessibility"
+}, {
+  "id": "/api/v1/categories/3",
+  "name": "For Children"
+}, {
+  "id": "/api/v1/categories/4",
+  "name": "Activities"
+}]

@@ -2,10 +2,10 @@
 
 var fs = require('fs');
 var path = require('path');
+var config = require('../../config');
 
 module.exports = (dbName) => {
   var dbPath = path.resolve('./data/' + dbName + '.json');
-  var collection = require(path.resolve('./data/collections/' + dbName + '.json'));
   var db = require(dbPath);
 
   function _updateDB() {
@@ -21,7 +21,7 @@ module.exports = (dbName) => {
   }
 
   var all = function () {
-    return collection;
+    return db;
   };
 
   var find = function (id) {
@@ -29,13 +29,10 @@ module.exports = (dbName) => {
   };
 
   var create = function (entity) {
-    // entity['id'] = db.length;
-    // db.push(entity);
+    entity['id'] = config.ns + '/' + dbName + '/' + db.length;
+    db.push(entity);
 
-    // return _updateDB();
-
-    // TODO Update JSON-LD files of collection and DB correctly.
-    return false;
+    return _updateDB();
   };
 
   var update = function (entity) {
@@ -54,7 +51,7 @@ module.exports = (dbName) => {
     }
 
     db[id] = {};
-    collection.members[id] = {};
+    // collection.members[id] = {};
 
     return _updateDB();
   };

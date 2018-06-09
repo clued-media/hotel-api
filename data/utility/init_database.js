@@ -4,4 +4,4 @@
 // require('../base/new_rooms')();
 // require('../base/new_bookings')();
 // require('../base/new_reviews')();
-// require('../base/new_hotels')();
+require('../base/new_hotels')();

@@ -1,8 +1,6 @@
-module.exports = (function () {
-  var config = {
-    api: 'https://sws-group-7-hotel-api.herokuapp.com/api/v1'
-  }
+var config = require('../../config');
 
+module.exports = (function () {
   /**
    * Returns an array with min...max unique random numbers in the range of 0...length.
    **/
@@ -12,7 +10,7 @@ module.exports = (function () {
 
     for (var i = 0; i < maxCount; i++) {
       var id = Math.floor(Math.random() * length);
-      set.add(config.api + '/' + resource + '/' + id);
+      set.add(config.ns + '/' + resource + '/' + id);
     }
 
     return Array.from(set);
@@ -26,7 +24,6 @@ module.exports = (function () {
   }
 
   return {
-    config,
     fillArray,
     getDate
   };
