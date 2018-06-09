@@ -25,14 +25,18 @@ function Users() {
 
   users.get('/:id/bookings', (req, res, next) => {
     res.send(jsonld.createCollection(
-      req.originalUrl, dbc.find(req.params.id)['bookings']
+      req.originalUrl,
+      'Booking',
+      dbc.find(req.params.id)['bookings']
     ));
     next();
   });
 
   users.get('/:id/reviews', (req, res, next) => {
     res.send(jsonld.createCollection(
-      req.originalUrl, dbc.find(req.params.id)['reviews']
+      req.originalUrl,
+      'Review',
+      dbc.find(req.params.id)['reviews']
     ));
     next();
   });

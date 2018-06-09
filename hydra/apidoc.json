@@ -31,8 +31,8 @@
       "@id": "vocab:Hotel",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "Hotel",
-      "description": "Hotel",
+      "label": "A hotel",
+      "description": "The Hotel entity",
       "supportedOperation": [{
           "@id": "_:hotel_retrieve",
           "@type": "hydra:Operation",
@@ -288,7 +288,7 @@
       "@id": "vocab:Room",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "Room",
+      "label": "A hotel room",
       "description": "Room",
       "supportedOperation": [{
           "@id": "_:room_retrieve",
@@ -458,7 +458,7 @@
       "@type": "hydra:Class",
       "subClassOf": null,
       "label": "Review",
-      "description": "Review",
+      "description": "A hotel review submitted by a user",
       "supportedOperation": [{
           "@id": "_:review_retrieve",
           "@type": "hydra:Operation",
@@ -604,7 +604,7 @@
       "@type": "hydra:Class",
       "subClassOf": null,
       "label": "Facility",
-      "description": "Facility",
+      "description": "A facility provided by a hotel",
       "supportedOperation": [{
           "@id": "_:facility_retrieve",
           "@type": "hydra:Operation",
@@ -692,8 +692,8 @@
       "@id": "vocab:Category",
       "@type": "hydra:Class",
       "subClassOf": null,
-      "label": "Facility Category",
-      "description": "Facility Category",
+      "label": "Category",
+      "description": "A facility category that groups multiple facilities",
       "supportedOperation": [{
           "@id": "_:category_retrieve",
           "@type": "hydra:Operation",
@@ -756,7 +756,7 @@
       "@type": "hydra:Class",
       "subClassOf": null,
       "label": "Location",
-      "description": "Location",
+      "description": "A location defined by longitude and latitude",
       "supportedOperation": [{
           "@id": "_:location_retrieve",
           "@type": "hydra:Operation",
@@ -884,7 +884,7 @@
       "@type": "hydra:Class",
       "subClassOf": null,
       "label": "Media",
-      "description": "Media",
+      "description": "A photo or video that shows more details about a hotel",
       "supportedOperation": [{
           "@id": "_:media_retrieve",
           "@type": "hydra:Operation",
@@ -1012,7 +1012,7 @@
       "@type": "hydra:Class",
       "subClassOf": null,
       "label": "EntryPoint",
-      "description": "The main entry point or homepage of the API.",
+      "description": "The main entry point of the API.",
       "supportedOperation": [{
         "@id": "_:entry_point",
         "@type": "hydra:Operation",

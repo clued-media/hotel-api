@@ -25,7 +25,9 @@ function Bookings() {
 
   bookings.get('/:id/rooms', (req, res, next) => {
     res.send(jsonld.createCollection(
-      req.originalUrl, dbc.find(req.params.id)['rooms']
+      req.originalUrl,
+      'Room',
+      dbc.find(req.params.id)['rooms']
     ));
     next();
   });

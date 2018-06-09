@@ -9,13 +9,20 @@ function JsonLdFactory() {
     }
   };
 
-  var createCollection = function (url, entries) {
-    return {
+  var createCollection = function (url, type, entries) {
+    var json = {
       '@context': config.ns + '/contexts/collection',
       '@type': 'Collection',
       '@id': url,
-      'members': entries
-    }
+      'members': []
+    };
+
+    entries.forEach(entry => {
+      json.members.push({
+        '@id': entry,
+        '@type': 'vocab:' + type
+      });
+    });
   };
 
   return {
