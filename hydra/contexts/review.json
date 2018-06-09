@@ -1,0 +1,18 @@
+{
+    "@context": {
+        "hydra": "http://www.w3.org/ns/hydra/core#",
+        "vocab": "https://sws-group-7-hotel-api.herokuapp.com/api/v1/vocab#",
+        "Review": "vocab:Review",
+        "date": "vocab:Review/date",
+        "rating": "vocab:Review/rating",
+        "comment": "vocab:Review/comment",
+        "user": {
+            "@id": "vocab:Review/user",
+            "@type": "@id"
+        },
+        "hotel": {
+            "@id": "vocab:Review/hotel",
+            "@type": "@id"
+        }
+    }
+}

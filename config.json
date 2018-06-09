@@ -1,4 +1,4 @@
 {
     "host": "https://sws-group-7-hotel-api.herokuapp.com",
-    "namespace": "/api/v1"
+    "ns": "/api/v1"
 }

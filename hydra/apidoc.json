@@ -28,6 +28,152 @@
       }]
     },
     {
+      "@id": "vocab:Review",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Review",
+      "description": "Review",
+      "supportedOperation": [{
+          "@id": "_:review_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Review entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Review",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Review entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:review_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Review entity",
+          "description": null,
+          "expects": "vocab:Review",
+          "returns": "vocab:Review",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Review entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:review_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Review entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Review entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Review/date",
+            "@type": "rdf:Property",
+            "label": "date",
+            "description": "The date of the Review entity",
+            "domain": "vocab:Review",
+            "range": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "supportedOperation": []
+          },
+          "hydra:title": "date",
+          "hydra:description": "The date of the Review entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Review/rating",
+            "@type": "rdf:Property",
+            "label": "rating",
+            "description": "The rating of the Review entity",
+            "domain": "vocab:Review",
+            "range": "http://www.w3.org/2001/XMLSchema#int",
+            "supportedOperation": []
+          },
+          "hydra:title": "rating",
+          "hydra:description": "The rating of the Review entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Review/comment",
+            "@type": "rdf:Property",
+            "label": "comment",
+            "description": "The comment of the Review entity",
+            "domain": "vocab:Review",
+            "range": "http://www.w3.org/2001/XMLSchema#string",
+            "supportedOperation": []
+          },
+          "hydra:title": "comment",
+          "hydra:description": "The comment of the Review entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Review/user",
+            "@type": "hydra:Link",
+            "label": "user",
+            "description": "The user who submitted the review",
+            "domain": "vocab:Review",
+            "range": "vocab:User",
+            "supportedOperation": [{
+              "@id": "_:user_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a User entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:User",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "user",
+          "hydra:description": "The user who submitted the review",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Review/hotel",
+            "@type": "hydra:Link",
+            "label": "hotel",
+            "description": "The hotel that was reviewed",
+            "domain": "vocab:Review",
+            "range": "vocab:Hotel",
+            "supportedOperation": [{
+              "@id": "_:hotel_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a Hotel entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:Hotel",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "hotel",
+          "hydra:description": "The hotel that was reviewed",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Facility",
       "@type": "hydra:Class",
       "subClassOf": null,

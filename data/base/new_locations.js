@@ -1,21 +1,21 @@
 var w = require('../utility/write');
 var data = require('../raw/hotels_usa_2.json');
+var config = require('../../config');
 
 module.exports = function () {
   var collection = {
-    '@context': '/api/v1/contexts/collection',
+    '@context': config.ns + '/contexts/collection',
     '@type': 'Collection',
-    '@id': '/api/v1/locations',
+    '@id': config.ns + '/locations',
     members: []
   };
-
   var locations = [];
   var i = 0;
 
   data.forEach(function (entry) {
     var formattedData = {
-      '@context': '/api/v1/contexts/location',
-      '@id': '/api/v1/locations/' + i,
+      '@context': config.ns + '/contexts/location',
+      '@id': config.ns + '/locations/' + i,
       '@type': 'Location',
       longitude: parseFloat(entry.longitude),
       latitude: parseFloat(entry.latitude),
@@ -28,7 +28,7 @@ module.exports = function () {
     if (i === 0 || (formattedData.longitude !== locations[i - 1].longitude && formattedData.latitude !== locations[i - 1].latitude)) {
       locations.push(formattedData);
       collection.members.push({
-        '@id': '/api/v1/locations/' + i,
+        '@id': config.ns + '/locations/' + i,
         '@type': 'vocab:Location'
       });
       i++;
