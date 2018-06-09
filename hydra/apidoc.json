@@ -28,6 +28,263 @@
       }]
     },
     {
+      "@id": "vocab:Hotel",
+      "@type": "hydra:Class",
+      "subClassOf": null,
+      "label": "Hotel",
+      "description": "Hotel",
+      "supportedOperation": [{
+          "@id": "_:hotel_retrieve",
+          "@type": "hydra:Operation",
+          "method": "GET",
+          "label": "Retrieves a Hotel entity",
+          "description": null,
+          "expects": null,
+          "returns": "vocab:Hotel",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Hotel entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:hotel_replace",
+          "@type": "hydra:Operation",
+          "method": "PUT",
+          "label": "Replaces an existing Hotel entity",
+          "description": null,
+          "expects": "vocab:Hotel",
+          "returns": "vocab:Hotel",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Hotel entity wasn't found."
+          }]
+        },
+        {
+          "@id": "_:hotel_delete",
+          "@type": "hydra:Operation",
+          "method": "DELETE",
+          "label": "Deletes a Hotel entity",
+          "description": null,
+          "expects": null,
+          "returns": "http://www.w3.org/2002/07/owl#Nothing",
+          "statusCodes": [{
+            "code": 404,
+            "description": "If the Hotel entity wasn't found."
+          }]
+        }
+      ],
+      "supportedProperty": [{
+          "property": {
+            "@id": "vocab:Hotel/name",
+            "@type": "rdf:Property",
+            "label": "name",
+            "description": "The name of the Hotel entity",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/2001/XMLSchema#int",
+            "supportedOperation": []
+          },
+          "hydra:title": "name",
+          "hydra:description": "The name of the Hotel entity",
+          "required": null,
+          "readonly": false,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/location",
+            "@type": "hydra:Link",
+            "label": "location",
+            "description": "The location of the Hotel entity",
+            "domain": "vocab:Hotel",
+            "range": "vocab:Location",
+            "supportedOperation": [{
+              "@id": "_:location_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves a Location entity",
+              "description": null,
+              "expects": null,
+              "returns": "vocab:Location",
+              "statusCodes": []
+            }]
+          },
+          "hydra:title": "location",
+          "hydra:description": "The location of the Hotel entity",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/users",
+            "@type": "hydra:Link",
+            "label": "users",
+            "description": "The collection of users staying at the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_users_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the users staying at the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "users",
+          "hydra:description": "The collection of users staying at the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/rooms",
+            "@type": "hydra:Link",
+            "label": "rooms",
+            "description": "The collection of rooms of the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_rooms_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the rooms of the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "rooms",
+          "hydra:description": "The collection of rooms of the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/bookings",
+            "@type": "hydra:Link",
+            "label": "bookings",
+            "description": "The collection of current bookings of the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_bookings_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the current bookings of the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "bookings",
+          "hydra:description": "The collection of current bookings of the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/reviews",
+            "@type": "hydra:Link",
+            "label": "reviews",
+            "description": "The collection of reviews of the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_reviews_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the reviews of the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "reviews",
+          "hydra:description": "The collection of reviews of the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/facilities",
+            "@type": "hydra:Link",
+            "label": "facilities",
+            "description": "The collection of facilities provided by the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_facilities_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the facilities provided by the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "facilities",
+          "hydra:description": "The collection of facilities provided by the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        },
+        {
+          "property": {
+            "@id": "vocab:Hotel/media",
+            "@type": "hydra:Link",
+            "label": "media",
+            "description": "The collection of media of the hotel",
+            "domain": "vocab:Hotel",
+            "range": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [{
+              "@id": "_:hotel_media_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the media of the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }]
+          },
+          "hydra:title": "media",
+          "hydra:description": "The collection of media of the hotel",
+          "required": null,
+          "readonly": true,
+          "writeonly": false
+        }
+      ]
+    },
+    {
       "@id": "vocab:Room",
       "@type": "hydra:Class",
       "subClassOf": null,
