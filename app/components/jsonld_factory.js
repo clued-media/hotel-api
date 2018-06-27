@@ -18,10 +18,13 @@ function JsonLdFactory() {
     };
 
     entries.forEach(entry => {
-      json.members.push({
-        '@id': entry.id ? entry.id : entry,
-        '@type': 'vocab:' + type
-      });
+      // Add only existing (not deleted) entries.
+      if (Object.keys(entry).length > 0) {
+        json.members.push({
+          '@id': entry.id ? entry.id : entry,
+          '@type': 'vocab:' + type
+        });
+      }
     });
 
     return json;

@@ -67,9 +67,9 @@ module.exports = dbc => {
   /* DELETE REQUESTS */
   router.delete('/:id', (req, res, next) => {
     if (dbc.remove(req.params.id)) {
-      res.status(200).json('Entry deleted!');
+      res.sendStatus(200);
     } else {
-      res.status(404).json('Entry not deleted!');
+      res.sendStatus(404);
     }
 
     next();

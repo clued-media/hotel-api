@@ -20,12 +20,16 @@ module.exports = (dbName) => {
     return false;
   }
 
+  function _isInvalid(id) {
+    return id < 0 || id >= db.length || (Object.keys(db[id]).length === 0 && db[id].constructor === Object);
+  }
+
   var all = function () {
     return db;
   };
 
   var find = function (id) {
-    return id < 0 || id >= db.length ? {} : db[id];
+    return _isInvalid(id) ? null : db[id];
   };
 
   var create = function (entity, cb) {
@@ -51,7 +55,7 @@ module.exports = (dbName) => {
 
   var remove = function (id) {
     // Check for boundries and if object to delete is already deleted.
-    if (id < 0 || id >= db.length || (Object.keys(db[id]).length === 0 && db[id].constructor === Object)) {
+    if (_isInvalid(id)) {
       return false;
     }
 

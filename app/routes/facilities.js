@@ -11,11 +11,15 @@ function Facilities() {
   facilities.get('/:id', (req, res, next) => {
     var entry = dbc.find(req.params.id);
 
-    var json = jsonld.createResource(req.originalUrl, 'Facility');
-    json['name'] = entry.name;
-    json['category'] = entry.category;
+    if (entry) {
+      var json = jsonld.createResource(req.originalUrl, 'Facility');
+      json['name'] = entry.name;
+      json['category'] = entry.category;
 
-    res.send(json);
+      res.send(json);
+    } else {
+      res.sendStatus(404);
+    }
     next();
   });
 
@@ -23,8 +27,8 @@ function Facilities() {
     req.body.category = config.ns + '/categories/' + req.body.category;
 
     dbc.create(req.body, (entity) => {
-      if (entity) res.status(201).json('Entry created');
-      else res.status(500).json('Entry not created');
+      if (entity) res.sendStatus(201);
+      else res.sendStatus(500);
     });
 
     next();
@@ -35,8 +39,8 @@ function Facilities() {
     req.body.category = config.ns + '/categories/' + req.body.category;
 
     dbc.update(req.body, (entity) => {
-      if (entity) res.status(200).json('Entry updated');
-      else res.status(500).json('Entry not updated');
+      if (entity) res.sendStatus(200);
+      else res.sendStatus(500);
     });
 
     next();
