@@ -177,13 +177,13 @@
               "@id": "_:user_bookings_create",
               "@type": "hydra:Operation",
               "method": "POST",
-              "label": "Creates a new Booking entity for the user",
+              "label": "Creates a new Booking entity",
               "description": null,
-              "expects": null,
-              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "expects": "vocab:Booking",
+              "returns": "vocab:Booking",
               "statusCodes": [{
-                "code": 404,
-                "description": "If the User entity wasn't found."
+                "code": 201,
+                "description": "If the Booking entity was created successfully."
               }]
             }]
           },
@@ -212,6 +212,18 @@
               "statusCodes": [{
                 "code": 404,
                 "description": "If the User entity wasn't found."
+              }]
+            }, {
+              "@id": "_:user_reviews_create",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Creates a new Review entity",
+              "description": null,
+              "expects": "vocab:Review",
+              "returns": "vocab:Review",
+              "statusCodes": [{
+                "code": 201,
+                "description": "If the Review entity was created successfully."
               }]
             }]
           },
