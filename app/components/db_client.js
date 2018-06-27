@@ -50,7 +50,8 @@ module.exports = (dbName) => {
   };
 
   var remove = function (id) {
-    if (id < 0 || id >= db.length) {
+    // Check for boundries and if object to delete is already deleted.
+    if (id < 0 || id >= db.length || (Object.keys(db[id]).length === 0 && db[id].constructor === Object)) {
       return false;
     }
 
