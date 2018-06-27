@@ -2,6 +2,7 @@
 
 var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
+var handler = require('../components/handler');
 
 function Users() {
   var dbc = require('../components/db_client')('users');
@@ -28,6 +29,37 @@ function Users() {
     next();
   });
 
+  users.post('/', (req, res, next) => {
+    req.body['bookings'] = [];
+    req.body['reviews'] = [];
+
+    dbc.create(req.body, (entity) => {
+      if (entity) res.status(201).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
+  });
+
+  users.put('/:id', (req, res, next) => {
+    req.body['id'] = req.params.id;
+
+    handler.updateUser(req.body, (entity) => {
+      if (entity) res.status(200).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
+  });
+
+  users.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
+
+    next();
+  });
+
   users.get('/:id/bookings', (req, res, next) => {
     res.send(jsonld.createCollection(
       req.originalUrl,
@@ -37,6 +69,17 @@ function Users() {
     next();
   });
 
+  users.post('/:id/bookings', (req, res, next) => {
+    // Add user id to body.
+    req.body['user'] = req.params.id;
+
+    handler.createBooking(req.body, (entity) => {
+      if (entity) res.status(201).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
+  });
+
   users.get('/:id/reviews', (req, res, next) => {
     res.send(jsonld.createCollection(
       req.originalUrl,
@@ -44,6 +87,17 @@ function Users() {
       dbc.find(req.params.id)['reviews']
     ));
     next();
+  });
+
+  users.post('/:id/reviews', (req, res, next) => {
+    // Add user id to body.
+    req.body['user'] = req.params.id;
+
+    handler.createReview(req.body, (entity) => {
+      if (entity) res.status(201).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
   });
 
   return users;

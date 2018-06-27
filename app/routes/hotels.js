@@ -54,9 +54,8 @@ function Hotels() {
     handler.updateHotel(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
+      next();
     });
-
-    next();
   });
 
   hotels.get('/:id/users', (req, res, next) => {
@@ -83,7 +82,6 @@ function Hotels() {
     handler.createRoom(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
-
       next();
     });
   });

@@ -173,6 +173,18 @@
                 "code": 404,
                 "description": "If the User entity wasn't found."
               }]
+            }, {
+              "@id": "_:user_bookings_create",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Creates a new Booking entity for the user",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the User entity wasn't found."
+              }]
             }]
           },
           "hydra:title": "bookings",
@@ -382,6 +394,36 @@
                 "code": 404,
                 "description": "If the Booking entity wasn't found."
               }]
+            }, {
+              "@id": "_:bookings_rooms_add",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Adds a Room entity to the booking",
+              "description": null,
+              "expects": "vocab:Room",
+              "returns": "vocab:Room",
+              "statusCodes": [{
+                "code": 200,
+                "description": "If the Room entity was added successfully."
+              }, {
+                "code": 404,
+                "description": "If the Room entity was not added successfully."
+              }]
+            }, {
+              "@id": "_:bookings_rooms_remove",
+              "@type": "hydra:Operation",
+              "method": "DELETE",
+              "label": "Removes a Room entity from the booking",
+              "description": null,
+              "expects": "vocab:Room",
+              "returns": "http://www.w3.org/2002/07/owl#Nothing",
+              "statusCodes": [{
+                "code": 200,
+                "description": "If the Room entity was removed successfully."
+              }, {
+                "code": 404,
+                "description": "If the Room entity was not removed successfully."
+              }]
             }]
           },
           "hydra:title": "rooms",
@@ -516,32 +558,30 @@
             "domain": "vocab:Hotel",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
             "supportedOperation": [{
-                "@id": "_:hotel_rooms_retrieve",
-                "@type": "hydra:Operation",
-                "method": "GET",
-                "label": "Retrieves the rooms of the hotel",
-                "description": null,
-                "expects": null,
-                "returns": "http://www.w3.org/ns/hydra/core#Collection",
-                "statusCodes": [{
-                  "code": 404,
-                  "description": "If the Hotel entity wasn't found."
-                }]
-              },
-              {
-                "@id": "_:hotel_rooms_create",
-                "@type": "hydra:Operation",
-                "method": "POST",
-                "label": "Creates a new Room entity for the hotel",
-                "description": null,
-                "expects": "vocab:Room",
-                "returns": "vocab:Room",
-                "statusCodes": [{
-                  "code": 201,
-                  "description": "If the Room entity was created successfully."
-                }]
-              }
-            ]
+              "@id": "_:hotel_rooms_retrieve",
+              "@type": "hydra:Operation",
+              "method": "GET",
+              "label": "Retrieves the rooms of the hotel",
+              "description": null,
+              "expects": null,
+              "returns": "http://www.w3.org/ns/hydra/core#Collection",
+              "statusCodes": [{
+                "code": 404,
+                "description": "If the Hotel entity wasn't found."
+              }]
+            }, {
+              "@id": "_:hotel_rooms_create",
+              "@type": "hydra:Operation",
+              "method": "POST",
+              "label": "Creates a new Room entity for the hotel",
+              "description": null,
+              "expects": "vocab:Room",
+              "returns": "vocab:Room",
+              "statusCodes": [{
+                "code": 201,
+                "description": "If the Room entity was created successfully."
+              }]
+            }]
           },
           "hydra:title": "rooms",
           "hydra:description": "The collection of rooms of the hotel",

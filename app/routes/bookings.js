@@ -13,16 +13,20 @@ function Bookings() {
   bookings.get('/:id', (req, res, next) => {
     var entry = dbc.find(req.params.id);
 
-    var json = jsonld.createResource(req.originalUrl, 'Booking');
-    json['date'] = entry.date;
-    json['arrival_date'] = entry.arrival_date;
-    json['depature_date'] = entry.depature_date;
-    json['payment_method'] = entry.payment_method;
-    json['amount'] = entry.amount;
-    json['user'] = entry.user;
-    json['rooms'] = req.originalUrl + '/rooms';
+    if (entry) {
+      var json = jsonld.createResource(req.originalUrl, 'Booking');
+      json['date'] = entry.date;
+      json['arrival_date'] = entry.arrival_date;
+      json['depature_date'] = entry.depature_date;
+      json['payment_method'] = entry.payment_method;
+      json['amount'] = entry.amount;
+      json['user'] = entry.user;
+      json['rooms'] = req.originalUrl + '/rooms';
 
-    res.send(json);
+      res.send(json);
+    } else {
+      res.sendStatus(404);
+    }
     next();
   });
 
@@ -43,9 +47,8 @@ function Bookings() {
     handler.updateBooking(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
+      next();
     });
-
-    next();
   });
 
   bookings.get('/:id/rooms', (req, res, next) => {
@@ -55,6 +58,22 @@ function Bookings() {
       dbc.find(req.params.id)['rooms']
     ));
     next();
+  });
+
+  bookings.post('/:id/rooms', (req, res, next) => {
+    handler.addRoom(req.params.id, req.body.room, (entity) => {
+      if (entity) res.status(200).send(entity);
+      else res.sendStatus(404);
+      next();
+    });
+  });
+
+  bookings.delete('/:id/rooms', (req, res, next) => {
+    handler.removeRoom(req.params.id, req.body.room, (entity) => {
+      if (entity) res.status(200).send(entity);
+      else res.sendStatus(404);
+      next();
+    });
   });
 
   bookings.delete('/:id', (req, res, next) => {
