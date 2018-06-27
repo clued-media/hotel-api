@@ -2,6 +2,7 @@
 
 var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
+var handler = require('../components/handler');
 
 function Hotels() {
   var dbc = require('../components/db_client')('hotels');
@@ -10,16 +11,22 @@ function Hotels() {
   hotels.get('/:id', (req, res, next) => {
     var entry = dbc.find(req.params.id);
 
-    var json = jsonld.createResource(req.originalUrl, 'Hotel');
-    json['location'] = entry.location;
-    json['users'] = req.originalUrl + '/users';
-    json['rooms'] = req.originalUrl + '/rooms';
-    json['bookings'] = req.originalUrl + '/bookings';
-    json['reviews'] = req.originalUrl + '/reviews';
-    json['facilities'] = req.originalUrl + '/facilities';
-    json['media'] = req.originalUrl + '/media';
+    if (entry) {
+      var json = jsonld.createResource(req.originalUrl, 'Hotel');
+      json['name'] = entry.name;
+      json['location'] = entry.location;
+      json['users'] = req.originalUrl + '/users';
+      json['rooms'] = req.originalUrl + '/rooms';
+      json['bookings'] = req.originalUrl + '/bookings';
+      json['reviews'] = req.originalUrl + '/reviews';
+      json['facilities'] = req.originalUrl + '/facilities';
+      json['media'] = req.originalUrl + '/media';
 
-    res.send(json);
+      res.send(json);
+    } else {
+      res.sendStatus(404);
+    }
+
     next();
   });
 
@@ -39,6 +46,15 @@ function Hotels() {
       dbc.find(req.params.id)['rooms']
     ));
     next();
+  });
+
+  hotels.post('/:id/rooms', (req, res, next) => {
+    handler.createRoom(req.body, req.params.id, (entity) => {
+      if (entity) res.sendStatus(201);
+      else res.sendStatus(500);
+
+      next();
+    });
   });
 
   hotels.get('/:id/bookings', (req, res, next) => {

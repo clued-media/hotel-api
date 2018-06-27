@@ -516,18 +516,32 @@
             "domain": "vocab:Hotel",
             "range": "http://www.w3.org/ns/hydra/core#Collection",
             "supportedOperation": [{
-              "@id": "_:hotel_rooms_retrieve",
-              "@type": "hydra:Operation",
-              "method": "GET",
-              "label": "Retrieves the rooms of the hotel",
-              "description": null,
-              "expects": null,
-              "returns": "http://www.w3.org/ns/hydra/core#Collection",
-              "statusCodes": [{
-                "code": 404,
-                "description": "If the Hotel entity wasn't found."
-              }]
-            }]
+                "@id": "_:hotel_rooms_retrieve",
+                "@type": "hydra:Operation",
+                "method": "GET",
+                "label": "Retrieves the rooms of the hotel",
+                "description": null,
+                "expects": null,
+                "returns": "http://www.w3.org/ns/hydra/core#Collection",
+                "statusCodes": [{
+                  "code": 404,
+                  "description": "If the Hotel entity wasn't found."
+                }]
+              },
+              {
+                "@id": "_:hotel_rooms_create",
+                "@type": "hydra:Operation",
+                "method": "POST",
+                "label": "Creates a new Room entity for the hotel",
+                "description": null,
+                "expects": "vocab:Room",
+                "returns": "vocab:Room",
+                "statusCodes": [{
+                  "code": 201,
+                  "description": "If the Room entity was created successfully."
+                }]
+              }
+            ]
           },
           "hydra:title": "rooms",
           "hydra:description": "The collection of rooms of the hotel",
@@ -796,7 +810,7 @@
             "@id": "vocab:Room/hotel",
             "@type": "hydra:Link",
             "label": "hotel",
-            "description": "The hotel the rooms belongs to",
+            "description": "The hotel ID of the hotel the rooms belongs to",
             "domain": "vocab:Room",
             "range": "vocab:Hotel",
             "supportedOperation": [{
@@ -811,7 +825,7 @@
             }]
           },
           "hydra:title": "hotel",
-          "hydra:description": "The hotel the rooms belongs to",
+          "hydra:description": "The hotel ID of the hotel the rooms belongs to",
           "required": null,
           "readonly": true,
           "writeonly": false
@@ -1031,7 +1045,7 @@
             "@id": "vocab:Facility/category",
             "@type": "hydra:Link",
             "label": "category",
-            "description": "The category the facility belongs to",
+            "description": "The category ID of the category the facility belongs to",
             "domain": "vocab:Facility",
             "range": "vocab:Category",
             "supportedOperation": [{
