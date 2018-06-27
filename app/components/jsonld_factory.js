@@ -19,7 +19,7 @@ function JsonLdFactory() {
 
     entries.forEach(entry => {
       json.members.push({
-        '@id': entry,
+        '@id': entry.id ? entry.id : entry,
         '@type': 'vocab:' + type
       });
     });

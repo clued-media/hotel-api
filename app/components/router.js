@@ -2,6 +2,7 @@
 
 var express = require('express');
 var config = require('../../config');
+var jsonld = require('./jsonld_factory');
 
 module.exports = dbc => {
   var router = express.Router();
@@ -33,29 +34,18 @@ module.exports = dbc => {
 
   /* GET REQUESTS */
   router.get('/', (req, res, next) => {
-    var entries = dbc.all();
-    var type = _getType(req.baseUrl);
-
-    var json = {
-      '@context': config.ns + '/contexts/collection',
-      '@type': 'Collection',
-      '@id': config.ns + req.baseUrl,
-      members: []
-    };
-
-    entries.forEach(entry => {
-      json.members.push({
-        '@id': entry.id,
-        '@type': 'vocab:' + type
-      });
-    });
-
-    res.send(json);
+    res.send(jsonld.createCollection(
+      req.originalUrl,
+      _getType(req.baseUrl),
+      dbc.all()
+    ));
     next();
   });
 
   /* POST REQUESTS */
   router.post('/', (req, res, next) => {
+    // TODO Add URIs to lists depending on _getType() and create object.
+
     if (dbc.create(req.body)) {
       res.status(201).send('Entry created!');
     } else {
