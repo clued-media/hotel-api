@@ -43,35 +43,33 @@ module.exports = dbc => {
   });
 
   /* POST REQUESTS */
-  router.post('/', (req, res, next) => {
-    // TODO Add URIs to lists depending on _getType() and create object.
+  // router.post('/', (req, res, next) => {
+  //   if (dbc.create(req.body)) {
+  //     res.status(201).send('Entry created!');
+  //   } else {
+  //     res.status(500).send('Entry not created!');
+  //   }
 
-    if (dbc.create(req.body)) {
-      res.status(201).send('Entry created!');
-    } else {
-      res.status(500).send('Entry not created!');
-    }
-
-    next();
-  });
+  //   next();
+  // });
 
   /* PUT REQUESTS */
-  router.put('/', (req, res, next) => {
-    if (dbc.update(req.body)) {
-      res.status(200).send('Entry updated!');
-    } else {
-      res.status(404).send('Entry not updated!');
-    }
+  // router.put('/', (req, res, next) => {
+  //   if (dbc.update(req.body)) {
+  //     res.status(200).send('Entry updated!');
+  //   } else {
+  //     res.status(404).send('Entry not updated!');
+  //   }
 
-    next();
-  });
+  //   next();
+  // });
 
   /* DELETE REQUESTS */
   router.delete('/:id', (req, res, next) => {
     if (dbc.remove(req.params.id)) {
-      res.status(200).send('Entry deleted!');
+      res.status(200).json('Entry deleted!');
     } else {
-      res.status(404).send('Entry not deleted!');
+      res.status(404).json('Entry not deleted!');
     }
 
     next();

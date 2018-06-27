@@ -28,21 +28,25 @@ module.exports = (dbName) => {
     return id < 0 || id >= db.length ? {} : db[id];
   };
 
-  var create = function (entity) {
+  var create = function (entity, cb) {
     entity['id'] = config.ns + '/' + dbName + '/' + db.length;
     db.push(entity);
 
-    return _updateDB();
+    if (_updateDB()) cb(entity);
+    else cb();
   };
 
-  var update = function (entity) {
-    if (entity.id < 0 || entity.id >= db.length) {
-      return false;
+  var update = function (entity, cb) {
+    var id = entity.id;
+    if (id < 0 || id >= db.length) {
+      cb();
+    } else {
+      entity.id = config.ns + '/' + dbName + '/' + id;
+      db[id] = entity;
+
+      if (_updateDB()) cb(entity);
+      else cb();
     }
-
-    db[entity.id] = entity;
-
-    return _updateDB();
   };
 
   var remove = function (id) {
