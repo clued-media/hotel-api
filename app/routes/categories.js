@@ -2,6 +2,7 @@
 
 var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
+var config = require('../../config');
 
 function Categories() {
   var dbc = require('../components/db_client')('categories');
@@ -14,6 +15,26 @@ function Categories() {
     json['name'] = entry.name;
 
     res.send(json);
+    next();
+  });
+
+  categories.post('/', (req, res, next) => {
+    dbc.create(req.body, (entity) => {
+      if (entity) res.status(201).json('Entry created');
+      else res.status(500).json('Entry not created');
+    });
+
+    next();
+  });
+
+  categories.put('/:id', (req, res, next) => {
+    req.body['id'] = req.params.id;
+
+    dbc.update(req.body, (entity) => {
+      if (entity) res.status(200).json('Entry updated');
+      else res.status(500).json('Entry not updated');
+    });
+
     next();
   });
 
