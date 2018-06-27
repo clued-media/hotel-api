@@ -2,8 +2,9 @@
 
 var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
-var config = require('../../config');
 var handler = require('../components/handler');
+
+var config = require('../../config');
 
 function Rooms() {
   var dbc = require('../components/db_client')('rooms');
@@ -31,7 +32,7 @@ function Rooms() {
   });
 
   rooms.post('/', (req, res, next) => {
-    handler.createRoom(req.body, req.body.hotel, (entity) => {
+    handler.createRoom(req.body, (entity) => {
       if (entity) res.sendStatus(201);
       else res.sendStatus(500);
 
@@ -52,9 +53,9 @@ function Rooms() {
   });
 
   rooms.delete('/:id', (req, res, next) => {
-    handler.deleteRoom(req.params.id, (error) => {
-      if (error) res.sendStatus(404);
-      else res.sendStatus(200);
+    handler.deleteRoom(req.params.id, (roomId) => {
+      if (roomId) res.sendStatus(200);
+      else res.sendStatus(404);
 
       next();
     });

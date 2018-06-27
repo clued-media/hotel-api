@@ -30,9 +30,8 @@ function Media() {
     dbc.create(req.body, (entity) => {
       if (entity) res.sendStatus(201);
       else res.sendStatus(500);
+      next();
     });
-
-    next();
   });
 
   media.put('/:id', (req, res, next) => {
@@ -41,7 +40,16 @@ function Media() {
     dbc.update(req.body, (entity) => {
       if (entity) res.sendStatus(200);
       else res.sendStatus(500);
+      next();
     });
+  });
+
+  media.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
 
     next();
   });

@@ -49,7 +49,9 @@ function Hotels() {
   });
 
   hotels.post('/:id/rooms', (req, res, next) => {
-    handler.createRoom(req.body, req.params.id, (entity) => {
+    req.body['hotel'] = req.params.id;
+
+    handler.createRoom(req.body, (entity) => {
       if (entity) res.sendStatus(201);
       else res.sendStatus(500);
 
@@ -90,6 +92,16 @@ function Hotels() {
       'Media',
       dbc.find(req.params.id)['media']
     ));
+    next();
+  });
+
+  hotels.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
+
     next();
   });
 

@@ -45,6 +45,16 @@ function Locations() {
     next();
   });
 
+  locations.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
+
+    next();
+  });
+
   return locations;
 }
 

@@ -29,9 +29,8 @@ function Facilities() {
     dbc.create(req.body, (entity) => {
       if (entity) res.sendStatus(201);
       else res.sendStatus(500);
+      next();
     });
-
-    next();
   });
 
   facilities.put('/:id', (req, res, next) => {
@@ -41,7 +40,16 @@ function Facilities() {
     dbc.update(req.body, (entity) => {
       if (entity) res.sendStatus(200);
       else res.sendStatus(500);
+      next();
     });
+  });
+
+  facilities.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
 
     next();
   });

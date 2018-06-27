@@ -1,52 +1,115 @@
 var dbcHotels = require('./db_client')('hotels');
 var dbcRooms = require('./db_client')('rooms');
+var dbcReviews = require('./db_client')('reviews');
+var dbcUsers = require('./db_client')('users');
+
 var config = require('../../config');
 
 function HotelHandler() {
-  var createRoom = function (room, hotelId, cb) {
-    room.hotel = config.ns + '/hotels/' + hotelId;
+  var createRoom = function (room, cb) {
+    // Get hotel, to which the new room was added.
+    var hotel = dbcHotels.find(room.hotel);
 
-    dbcRooms.create(room, (roomEntity) => {
-      if (roomEntity) {
-        // Get hotel, to which the new room was added, and update its rooms list.
-        var hotel = dbcHotels.find(hotelId);
-        hotel.rooms.push(roomEntity.id);
+    if (hotel) {
+      room.hotel = config.ns + '/hotels/' + room.hotel;
 
-        dbcHotels.update(hotel, (hotelEntity) => {
-          if (hotelEntity) cb(roomEntity);
-          else cb()
-        })
-      } else cb();
-    });
+      dbcRooms.create(room, (roomEntity) => {
+        if (roomEntity) {
+          // Update hotel's rooms.
+          hotel.rooms.push(roomEntity.id);
+
+          dbcHotels.update(hotel, (hotelEntity) => {
+            if (hotelEntity) cb(roomEntity);
+            else cb();
+          })
+        } else cb();
+      });
+    } else cb();
   };
 
   var deleteRoom = function (roomId, cb) {
     var room = dbcRooms.find(roomId);
+    var hotelId = parseInt(room.hotel.substring((config.ns + '/hotels/').length));
+    // Get hotel, whose room was deleted.
+    var hotel = dbcHotels.find(hotelId);
 
-    if (room) {
-      var hotelId = parseInt(room.hotel.substring((config.ns + '/hotels/').length));
+    if (room && hotel && dbcRooms.remove(roomId)) {
+      // Update hotel's rooms.
+      var roomIndex = hotel.rooms.indexOf(config.ns + '/rooms/' + roomId);
+      hotel.rooms.splice(roomIndex, 1);
 
-      if (dbcRooms.remove(roomId)) {
-        // Get hotel, to which the new room was added, and update its rooms list.
-        var hotel = dbcHotels.find(hotelId);
-        var roomIndex = hotel.rooms.indexOf(config.ns + '/rooms/' + roomId);
-        hotel.rooms.splice(roomIndex, 1);
+      dbcHotels.update(hotel, (hotelEntity) => {
+        if (hotelEntity) cb(roomId);
+        else cb();
+      })
+    } else cb();
+  };
 
-        dbcHotels.update(hotel, (hotelEntity) => {
-          if (hotelEntity) cb();
-          else cb();
-        })
-      } else {
-        cb();
-      }
-    } else {
-      cb();
-    }
-  }
+  var createReview = function (review, cb) {
+    // Get user, to which the new review was added.
+    var user = dbcUsers.find(review.user);
+    // Get hotel, to which the new review was added.
+    var hotel = dbcHotels.find(review.hotel);
+
+    if (user && hotel) {
+      review.user = config.ns + '/users/' + review.user;
+      review.hotel = config.ns + '/hotels/' + review.hotel;
+
+      dbcReviews.create(review, (reviewEntity) => {
+        if (reviewEntity) {
+          // Update user's reviews.
+          user.reviews.push(reviewEntity.id);
+
+          dbcUsers.update(user, (userEntity) => {
+            if (userEntity) {
+              // Update hotel's reviews.
+              hotel.reviews.push(reviewEntity.id);
+
+              dbcHotels.update(hotel, (hotelEntity) => {
+                if (hotelEntity) cb(reviewEntity);
+                else cb();
+              });
+            } else cb();
+          });
+        } else cb();
+      });
+    } else cb();
+  };
+
+  var deleteReview = function (reviewId, cb) {
+    var review = dbcReviews.find(reviewId);
+    // Get user, to which the new review was added.
+    var userId = parseInt(review.user.substring((config.ns + '/users/').length));
+    var user = dbcUsers.find(userId);
+    // Get hotel, to which the new review was added.
+    var hotelId = parseInt(review.hotel.substring((config.ns + '/hotels/').length));
+    var hotel = dbcHotels.find(hotelId);
+
+    if (review && user && hotel && dbcReviews.remove(reviewId)) {
+      // Update user's reviews.
+      var userIndex = user.reviews.indexOf(config.ns + '/reviews/' + reviewId);
+      user.reviews.splice(userIndex, 1);
+
+      dbcUsers.update(user, (userEntity) => {
+        if (userEntity) {
+          // Get hotel, whose review was deleted, and update its review list.
+          var reviewIndex = hotel.reviews.indexOf(config.ns + '/reviews/' + reviewId);
+          hotel.reviews.splice(reviewIndex, 1);
+
+          dbcHotels.update(hotel, (hotelEntity) => {
+            if (hotelEntity) cb(reviewId);
+            else cb();
+          });
+        } else cb();
+      });
+    } else cb();
+  };
 
   return {
     createRoom,
-    deleteRoom
+    deleteRoom,
+    createReview,
+    deleteReview
   };
 }
 

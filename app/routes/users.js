@@ -10,16 +10,21 @@ function Users() {
   users.get('/:id', (req, res, next) => {
     var entry = dbc.find(req.params.id);
 
-    var json = jsonld.createResource(req.originalUrl, 'User');
-    json['first_name'] = entry.first_name;
-    json['last_name'] = entry.last_name;
-    json['username'] = entry.username;
-    json['email'] = entry.email;
-    json['password'] = entry.password;
-    json['bookings'] = req.originalUrl + '/bookings';
-    json['reviews'] = req.originalUrl + '/reviews';
+    if (entry) {
+      var json = jsonld.createResource(req.originalUrl, 'User');
+      json['first_name'] = entry.first_name;
+      json['last_name'] = entry.last_name;
+      json['username'] = entry.username;
+      json['email'] = entry.email;
+      json['password'] = entry.password;
+      json['bookings'] = req.originalUrl + '/bookings';
+      json['reviews'] = req.originalUrl + '/reviews';
 
-    res.send(json);
+      res.send(json);
+    } else {
+      res.sendStatus(404);
+    }
+
     next();
   });
 

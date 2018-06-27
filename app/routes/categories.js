@@ -26,9 +26,8 @@ function Categories() {
     dbc.create(req.body, (entity) => {
       if (entity) res.sendStatus(201);
       else res.sendStatus(500);
+      next();
     });
-
-    next();
   });
 
   categories.put('/:id', (req, res, next) => {
@@ -37,7 +36,16 @@ function Categories() {
     dbc.update(req.body, (entity) => {
       if (entity) res.sendStatus(200);
       else res.sendStatus(500);
+      next();
     });
+  });
+
+  categories.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
 
     next();
   });
