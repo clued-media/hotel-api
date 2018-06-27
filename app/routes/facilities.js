@@ -27,7 +27,7 @@ function Facilities() {
     req.body.category = config.ns + '/categories/' + req.body.category;
 
     dbc.create(req.body, (entity) => {
-      if (entity) res.sendStatus(201);
+      if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
       next();
     });
@@ -38,7 +38,7 @@ function Facilities() {
     req.body.category = config.ns + '/categories/' + req.body.category;
 
     dbc.update(req.body, (entity) => {
-      if (entity) res.sendStatus(200);
+      if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
       next();
     });

@@ -27,7 +27,7 @@ function Locations() {
 
   locations.post('/', (req, res, next) => {
     dbc.create(req.body, (entity) => {
-      if (entity) res.sendStatus(201);
+      if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
     });
 
@@ -38,7 +38,7 @@ function Locations() {
     req.body['id'] = req.params.id;
 
     dbc.update(req.body, (entity) => {
-      if (entity) res.sendStatus(200);
+      if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
     });
 

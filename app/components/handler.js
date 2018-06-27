@@ -1,4 +1,5 @@
 var dbcHotels = require('./db_client')('hotels');
+var dbcBookings = require('./db_client')('bookings');
 var dbcRooms = require('./db_client')('rooms');
 var dbcReviews = require('./db_client')('reviews');
 var dbcUsers = require('./db_client')('users');
@@ -6,6 +7,29 @@ var dbcUsers = require('./db_client')('users');
 var config = require('../../config');
 
 function HotelHandler() {
+  var updateHotel = function (hotel, cb) {
+    var oldHotel = dbcHotels.find(hotel.id);
+
+    hotel.location = config.ns + '/locations/' + hotel.location;
+    hotel['users'] = oldHotel.users;
+    hotel['rooms'] = oldHotel.rooms;
+    hotel['bookings'] = oldHotel.bookings;
+    hotel['reviews'] = oldHotel.reviews;
+    hotel['facilities'] = oldHotel.facilities;
+    hotel['media'] = oldHotel.media;
+
+    dbcHotels.update(hotel, cb);
+  };
+
+  var updateBooking = function (booking, cb) {
+    var oldBooking = dbcBookings.find(booking.id);
+
+    booking.user = config.ns + '/users/' + booking.user;
+    booking['rooms'] = oldBooking.rooms;
+
+    dbcBookings.update(booking, cb);
+  };
+
   var createRoom = function (room, cb) {
     // Get hotel, to which the new room was added.
     var hotel = dbcHotels.find(room.hotel);
@@ -106,6 +130,8 @@ function HotelHandler() {
   };
 
   return {
+    updateHotel,
+    updateBooking,
     createRoom,
     deleteRoom,
     createReview,

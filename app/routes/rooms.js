@@ -33,7 +33,7 @@ function Rooms() {
 
   rooms.post('/', (req, res, next) => {
     handler.createRoom(req.body, (entity) => {
-      if (entity) res.sendStatus(201);
+      if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
 
       next();
@@ -45,7 +45,7 @@ function Rooms() {
     req.body.hotel = config.ns + '/hotels/' + req.body.hotel;
 
     dbc.update(req.body, (entity) => {
-      if (entity) res.sendStatus(200);
+      if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
     });
 

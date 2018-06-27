@@ -2,6 +2,9 @@
 
 var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
+var handler = require('../components/handler');
+
+var config = require('../../config');
 
 function Bookings() {
   var dbc = require('../components/db_client')('bookings');
@@ -20,6 +23,28 @@ function Bookings() {
     json['rooms'] = req.originalUrl + '/rooms';
 
     res.send(json);
+    next();
+  });
+
+  bookings.post('/', (req, res, next) => {
+    req.body.user = config.ns + '/users/' + req.body.user;
+    req.body['rooms'] = [];
+
+    dbc.create(req.body, (entity) => {
+      if (entity) res.status(201).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
+  });
+
+  bookings.put('/:id', (req, res, next) => {
+    req.body['id'] = req.params.id;
+
+    handler.updateBooking(req.body, (entity) => {
+      if (entity) res.status(200).send(entity);
+      else res.sendStatus(500);
+    });
+
     next();
   });
 

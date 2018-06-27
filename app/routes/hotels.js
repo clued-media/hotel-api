@@ -4,6 +4,8 @@ var router = require('../components/router');
 var jsonld = require('../components/jsonld_factory');
 var handler = require('../components/handler');
 
+var config = require('../../config');
+
 function Hotels() {
   var dbc = require('../components/db_client')('hotels');
   var hotels = router(dbc);
@@ -30,6 +32,33 @@ function Hotels() {
     next();
   });
 
+  hotels.post('/', (req, res, next) => {
+    req.body.location = config.ns + '/locations/' + req.body.location;
+    req.body['users'] = [];
+    req.body['rooms'] = [];
+    req.body['bookings'] = [];
+    req.body['reviews'] = [];
+    req.body['facilities'] = [];
+    req.body['media'] = [];
+
+    dbc.create(req.body, (entity) => {
+      if (entity) res.status(201).send(entity);
+      else res.sendStatus(500);
+      next();
+    });
+  });
+
+  hotels.put('/:id', (req, res, next) => {
+    req.body['id'] = req.params.id;
+
+    handler.updateHotel(req.body, (entity) => {
+      if (entity) res.status(200).send(entity);
+      else res.sendStatus(500);
+    });
+
+    next();
+  });
+
   hotels.get('/:id/users', (req, res, next) => {
     res.send(jsonld.createCollection(
       req.originalUrl,
@@ -52,7 +81,7 @@ function Hotels() {
     req.body['hotel'] = req.params.id;
 
     handler.createRoom(req.body, (entity) => {
-      if (entity) res.sendStatus(201);
+      if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
 
       next();

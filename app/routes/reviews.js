@@ -30,7 +30,7 @@ function Reviews() {
 
   reviews.post('/', (req, res, next) => {
     handler.createReview(req.body, (entity) => {
-      if (entity) res.sendStatus(201);
+      if (entity) res.status(201).send(entity);
       else res.sendStatus(500);
 
       next();
@@ -43,7 +43,7 @@ function Reviews() {
     req.body.hotel = config.ns + '/hotels/' + req.body.hotel;
 
     dbc.update(req.body, (entity) => {
-      if (entity) res.sendStatus(200);
+      if (entity) res.status(200).send(entity);
       else res.sendStatus(500);
     });
 
