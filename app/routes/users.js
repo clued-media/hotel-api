@@ -23,7 +23,7 @@ function Users() {
 
       res.send(json);
     } else {
-      res.sendStatus(404);
+      res.status(404).json('Not Found');
     }
 
     next();
@@ -35,7 +35,7 @@ function Users() {
 
     dbc.create(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('User not created successfully');
       next();
     });
   });
@@ -45,19 +45,9 @@ function Users() {
 
     handler.updateUser(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('User not updated successfully');
       next();
     });
-  });
-
-  users.delete('/:id', (req, res, next) => {
-    if (dbc.remove(req.params.id)) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(404);
-    }
-
-    next();
   });
 
   users.get('/:id/bookings', (req, res, next) => {
@@ -75,7 +65,7 @@ function Users() {
 
     handler.createBooking(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Booking not created successfully');
       next();
     });
   });
@@ -95,9 +85,19 @@ function Users() {
 
     handler.createReview(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Review not created successfully');
       next();
     });
+  });
+
+  users.delete('/:id', (req, res, next) => {
+    if (dbc.remove(req.params.id)) {
+      res.sendStatus(200);
+    } else {
+      res.status(500).json('User not deleted successfully');
+    }
+
+    next();
   });
 
   return users;

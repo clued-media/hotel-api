@@ -20,7 +20,7 @@ function Media() {
 
       res.send(json);
     } else {
-      res.sendStatus(404)
+      res.status(404).json('Not Found');
     }
 
     next();
@@ -29,7 +29,7 @@ function Media() {
   media.post('/', (req, res, next) => {
     dbc.create(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Media not created successfully');
       next();
     });
   });
@@ -39,16 +39,16 @@ function Media() {
 
     dbc.update(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Media not updated successfully');
       next();
     });
   });
 
   media.delete('/:id', (req, res, next) => {
     if (dbc.remove(req.params.id)) {
-      res.sendStatus(200);
+      res.status(200).json('OK');
     } else {
-      res.sendStatus(404);
+      res.status(500).json('Media not deleted successfully');
     }
 
     next();

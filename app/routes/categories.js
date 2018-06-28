@@ -16,7 +16,7 @@ function Categories() {
 
       res.send(json);
     } else {
-      res.sendStatus(404);
+      res.status(404).json('Not Found');
     }
 
     next();
@@ -25,7 +25,7 @@ function Categories() {
   categories.post('/', (req, res, next) => {
     dbc.create(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Category not created successfully');
       next();
     });
   });
@@ -35,16 +35,16 @@ function Categories() {
 
     dbc.update(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Category not updated successfully');
       next();
     });
   });
 
   categories.delete('/:id', (req, res, next) => {
     if (dbc.remove(req.params.id)) {
-      res.sendStatus(200);
+      res.status(200).json('OK');
     } else {
-      res.sendStatus(404);
+      res.status(500).json('Category not deleted successfully');
     }
 
     next();

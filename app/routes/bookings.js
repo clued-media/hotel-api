@@ -25,7 +25,7 @@ function Bookings() {
 
       res.send(json);
     } else {
-      res.sendStatus(404);
+      res.status(404).json('Not Found');
     }
     next();
   });
@@ -36,7 +36,7 @@ function Bookings() {
 
     dbc.create(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Booking not created successfully');
       next();
     });
   });
@@ -46,7 +46,7 @@ function Bookings() {
 
     handler.updateBooking(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Booking not updated successfully');
       next();
     });
   });
@@ -63,7 +63,7 @@ function Bookings() {
   bookings.post('/:id/rooms', (req, res, next) => {
     handler.addRoom(req.params.id, req.body.room, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(404);
+      else res.status(500).json('Room not added successfully');
       next();
     });
   });
@@ -71,16 +71,16 @@ function Bookings() {
   bookings.delete('/:id/rooms', (req, res, next) => {
     handler.removeRoom(req.params.id, req.body.room, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(404);
+      else res.status(500).json('Room not removed successfully');
       next();
     });
   });
 
   bookings.delete('/:id', (req, res, next) => {
     if (dbc.remove(req.params.id)) {
-      res.sendStatus(200);
+      res.status(200).json('OK');
     } else {
-      res.sendStatus(404);
+      res.status(500).json('Booking not deleted successfully');
     }
 
     next();

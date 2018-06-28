@@ -23,7 +23,7 @@ function Reviews() {
 
       res.send(json);
     } else {
-      res.sendStatus(404);
+      res.status(404).json('Not Found');
     }
     next();
   });
@@ -31,7 +31,7 @@ function Reviews() {
   reviews.post('/', (req, res, next) => {
     handler.createReview(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Review not created successfully');
 
       next();
     });
@@ -44,7 +44,7 @@ function Reviews() {
 
     dbc.update(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Review not updated successfully');
     });
 
     next();
@@ -53,7 +53,7 @@ function Reviews() {
   reviews.delete('/:id', (req, res, next) => {
     handler.deleteReview(req.params.id, (reviewId) => {
       if (reviewId) res.sendStatus(200);
-      else res.sendStatus(404);
+      else res.status(500).json('Review not deleted successfully');
 
       next();
     });

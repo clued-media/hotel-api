@@ -323,7 +323,7 @@
             "range": "http://www.w3.org/2001/XMLSchema#dateTime",
             "supportedOperation": []
           },
-          "hydra:title": "arrival_date",
+          "hydra:title": "departure_date",
           "hydra:description": "The date the user will departure",
           "required": null,
           "readonly": false,

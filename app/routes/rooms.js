@@ -25,7 +25,7 @@ function Rooms() {
 
       res.send(json);
     } else {
-      res.sendStatus(404);
+      res.status(404).json('Not Found');
     }
 
     next();
@@ -34,7 +34,7 @@ function Rooms() {
   rooms.post('/', (req, res, next) => {
     handler.createRoom(req.body, (entity) => {
       if (entity) res.status(201).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Room not created successfully');
 
       next();
     });
@@ -46,7 +46,7 @@ function Rooms() {
 
     dbc.update(req.body, (entity) => {
       if (entity) res.status(200).send(entity);
-      else res.sendStatus(500);
+      else res.status(500).json('Room not updated successfully');
     });
 
     next();
@@ -54,8 +54,8 @@ function Rooms() {
 
   rooms.delete('/:id', (req, res, next) => {
     handler.deleteRoom(req.params.id, (roomId) => {
-      if (roomId) res.sendStatus(200);
-      else res.sendStatus(404);
+      if (roomId) res.status(200).json('OK');
+      else res.status(500).json('Room not deleted successfully');
 
       next();
     });
