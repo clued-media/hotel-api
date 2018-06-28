@@ -17,7 +17,7 @@ function Bookings() {
       var json = jsonld.createResource(req.originalUrl, 'Booking');
       json['date'] = entry.date;
       json['arrival_date'] = entry.arrival_date;
-      json['depature_date'] = entry.depature_date;
+      json['departure_date'] = entry.departure_date;
       json['payment_method'] = entry.payment_method;
       json['amount'] = entry.amount;
       json['user'] = entry.user;
