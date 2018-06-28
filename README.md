@@ -3,6 +3,8 @@
 This REST API represents a _Hotel Booking API_ consisting of 9 different resources, each one accessible by its corresponding name (in plural form).
 All supported HTTP calls with their meanings and JSON resource objects are listed below.
 
+The API is accessible on [Heroku](https://sws-group-7-hotel-api.herokuapp.com/api/v1).
+
 ## Table of Contents
 
 -   [Users](#users)
